@@ -1,0 +1,5 @@
+- improve boxseset cycles changing, design something like queue
+- rationalize box hitting mechanism
+- design questioning mechanism
+- rapair texturing
+- make mirror on the back wall of room
