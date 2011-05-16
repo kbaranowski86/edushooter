@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Simple shooter" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin\Debug\Simple shooter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:\Program Files\CodeBlocks\MinGW\bin" />
+				<Option object_output="obj\Debug\" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin\Release\Simple shooter" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:\Program Files\CodeBlocks\MinGW\bin" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="C:\Program Files\CodeBlocks\MinGW\include" />
+		</Compiler>
+		<Linker>
+			<Add library="glut32" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add directory="C:\Program Files\CodeBlocks\MinGW\lib" />
+		</Linker>
+		<Unit filename="BMPLoader.cpp" />
+		<Unit filename="BMPLoader.h" />
+		<Unit filename="answerbox.h" />
+		<Unit filename="answerboxset.h" />
+		<Unit filename="box.h" />
+		<Unit filename="boxset.h" />
+		<Unit filename="boxsetset.h" />
+		<Unit filename="bullet.h" />
+		<Unit filename="cegla.bmp" />
+		<Unit filename="infobar.h" />
+		<Unit filename="light.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="point.h" />
+		<Unit filename="questionboxset.h" />
+		<Unit filename="rectangle.h" />
+		<Unit filename="room.h" />
+		<Unit filename="scene.h" />
+		<Unit filename="score.h" />
+		<Unit filename="threelevelbox.h" />
+		<Unit filename="threelevelboxset.h" />
+		<Unit filename="utils.h" />
+		<Unit filename="weapon.h" />
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
