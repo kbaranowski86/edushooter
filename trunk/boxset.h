@@ -36,7 +36,7 @@ class BoxSet
                             0.7,
                             0.7,
                             0.7,
-                            2 );
+                            2, "gres.bmp" );
              }
         }
 

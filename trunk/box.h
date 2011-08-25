@@ -1,10 +1,8 @@
 //3rd party libraries
 #pragma once
-#include "BMPLoader.h"
 
 //Project libraries
 #include "score.h"
-#include "rectangle.h"
 
 //definicja prostopadloscianu
 class Box
@@ -43,21 +41,17 @@ class Box
 
         Box( point upperLeftBack, point lowerRightFront, double r, double g, double b, double pointsNum, char* texturePath = "" ):
             initialMoveDirection( 0.3 ),
-            backWall( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), point(0, 0, -1) ),
-            frontWall( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, point(0, 0, 1) ),
-            leftWall( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), point(-1, 0, 0), Utils::ZY ),
-            rightWall( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(1, 0, 0), Utils::ZY ),
-            topWall( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), point(0, 1, 0), Utils::XZ ),
-            bottomWall( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(0, -1, 0), Utils::XZ )
+            backWall( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), point(0, 0, -1), Utils::XY, texturePath ),
+            frontWall( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, point(0, 0, 1), Utils::XY, texturePath ),
+            leftWall( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), point(-1, 0, 0), Utils::ZY, texturePath ),
+            rightWall( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(1, 0, 0), Utils::ZY, texturePath ),
+            topWall( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), point(0, 1, 0), Utils::XZ, texturePath ),
+            bottomWall( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(0, -1, 0), Utils::XZ, texturePath )
         {
-
 
                 if( texturePath != "" )
                 {
                     BMPLoad(texturePath, textureImage);
-                    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-                    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-                    glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage.width, textureImage.height, 0, GL_RGB,GL_UNSIGNED_BYTE, textureImage.bytes);
                 }
 
                 //top left back point

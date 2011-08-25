@@ -306,17 +306,18 @@
 1164123868 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter_developer\bmploader.cpp
 	"BMPLoader.h"
 
-1303761119 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\main.cpp
+1313956329 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\main.cpp
 	<windows.h>
 	"scene.h"
 
-1303764194 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\scene.h
+1314218990 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\scene.h
 	<windows.h>
 	<GL/glut.h>
 	<GL/gl.h>
 	<GL/glu.h>
 	"point.h"
 	"utils.h"
+	"rectangle.h"
 	"weapon.h"
 	"light.h"
 	<stdio.h>
@@ -330,7 +331,7 @@
 	<math.h>
 	<iostream>
 
-1301336854 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\weapon.h
+1314217159 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\weapon.h
 	<iostream>
 	"bullet.h"
 	"infobar.h"
@@ -343,7 +344,7 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1301345741 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\boxset.h
+1314219998 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\boxset.h
 	<time.h>
 	<stdlib.h>
 	"box.h"
@@ -352,10 +353,8 @@
 	<cmath>
 	"box.h"
 
-1303510708 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\box.h
-	"BMPLoader.h"
+1314218016 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\box.h
 	"score.h"
-	"rectangle.h"
 
 1298738633 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\bmploader.h
 	<string>
@@ -364,15 +363,16 @@
 1301337681 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\score.h
 	<time.h>
 
-1303503663 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\rectangle.h
+1314301386 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\rectangle.h
+	"BMPLoader.h"
 
 1301088805 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\utils.h
 
-1303763647 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\room.h
+1314301976 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\room.h
 
 1299619509 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\light.h
 
-1301344686 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\infobar.h
+1314218850 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\infobar.h
 
 1164127468 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\bmploader.cpp
 	"BMPLoader.h"
