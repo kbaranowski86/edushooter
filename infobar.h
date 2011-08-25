@@ -6,10 +6,13 @@ class InfoBar
         int bullets;
         point position;
 
+        Rect barBg;
+
     public:
         InfoBar()
         {
             position = point( 0, 0, 0);
+            barBg = Rect( point( 0.15, 0.29, position.GetZ() -0.51 ) , point( 0.3, 0.215, position.GetZ() -0.51 ), point( 0, 0, -1 ), Utils::XY, "", true );
         }
         InfoBar(const InfoBar &);
         InfoBar& operator=(const InfoBar&);
@@ -52,6 +55,8 @@ class InfoBar
             char pointsString[100];
             char playTimeString[100];
             char bulletsString[100];
+
+            barBg.Draw();
 
             sprintf(pointsString, "%i", points);
             sprintf(playTimeString, "%.2lf", playTime);

@@ -1,87 +1,26 @@
 class Room : public Box
 {
 
+    // walls
+    Rect backWall;
+    Rect frontWall;
+    Rect leftWall;
+    Rect rightWall;
+    Rect topWall;
+    Rect bottomWall;
+
       public:
-          Room(point upperLeftBack = point(0,0,0), point lowerRightFront=point(0,0,0), float r = 0, float g = 0, float b = 0, char* texturePath = "") : Box(upperLeftBack, lowerRightFront, r, g, b, 0, texturePath)
+          Room(point upperLeftBack = point(0,0,0), point lowerRightFront=point(0,0,0), float r = 0, float g = 0, float b = 0, char* texturePath = "") :
+            Box(upperLeftBack, lowerRightFront, r, g, b, 0, texturePath),
+            backWall( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), point(0, 0, 1), Utils::XY, texturePath ),
+            frontWall( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, point(0, 0, -1), Utils::XY, texturePath ),
+            leftWall( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), point(1, 0, 0), Utils::ZY, texturePath ),
+            rightWall( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(-1, 0, 0), Utils::ZY, texturePath ),
+            topWall( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), point(0, 1, 0), Utils::XZ, texturePath ),
+            bottomWall( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(0, -1, 0), Utils::XZ, texturePath )
           {
 
           }
-
-          void Draw(){
-
-            glPolygonMode(GL_FRONT, GL_FILL);
-            glPolygonMode(GL_BACK, GL_FILL);
-
-            if(!hit)
-            {
-                glColor3f(r, g, b);
-            }
-            else
-            {
-                glColor3f(hitR, hitG, hitB);
-            }
-
-            // back wall
-            glBegin(GL_QUADS);
-                       glNormal3f(0, 0, 1);
-                       glTexCoord2d(0, 1); glVertex3f (this->upperLeftBack.GetX(), this->upperLeftBack.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 1); glVertex3f (this->lowerRightFront.GetX(), this->upperLeftBack.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 0); glVertex3f (this->lowerRightFront.GetX(), this->lowerRightFront.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(0, 0); glVertex3f (this->upperLeftBack.GetX(), this->lowerRightFront.GetY(), this->lowerRightFront.GetZ());
-
-            glEnd();
-
-            // front wall
-            glBegin(GL_QUADS);
-                       glNormal3f(0, 0, -1);
-                       glTexCoord2d(0, 1); glVertex3f (this->upperLeftBack.GetX(), this->upperLeftBack.GetY(), this->upperLeftBack.GetZ());
-                       glTexCoord2d(1, 1); glVertex3f (this->lowerRightFront.GetX(), this->upperLeftBack.GetY(), this->upperLeftBack.GetZ());
-                       glTexCoord2d(1, 0); glVertex3f (this->lowerRightFront.GetX(), this->lowerRightFront.GetY(), this->upperLeftBack.GetZ());
-                       glTexCoord2d(0, 0); glVertex3f (this->upperLeftBack.GetX(), this->lowerRightFront.GetY(), this->upperLeftBack.GetZ());
-
-            glEnd();
-
-            // left wall
-            glBegin(GL_QUADS);
-                       glNormal3f(1, 0, 0);
-                       glTexCoord2d(0, 1); glVertex3f (this->upperLeftBack.GetX(), this->upperLeftBack.GetY(), this->upperLeftBack.GetZ());
-                       glTexCoord2d(1, 1); glVertex3f (this->upperLeftBack.GetX(), this->upperLeftBack.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 0); glVertex3f (this->upperLeftBack.GetX(), this->lowerRightFront.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(0, 0); glVertex3f (this->upperLeftBack.GetX(), this->lowerRightFront.GetY(), this->upperLeftBack.GetZ());
-
-            glEnd();
-
-            // right wall
-            glBegin(GL_QUADS);
-                       glNormal3f(-1, 0, 0);
-                       glTexCoord2d(0, 1); glVertex3f (this->lowerRightFront.GetX(), this->upperLeftBack.GetY(), this->upperLeftBack.GetZ());
-                       glTexCoord2d(1, 1); glVertex3f (this->lowerRightFront.GetX(), this->upperLeftBack.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 0); glVertex3f (this->lowerRightFront.GetX(), this->lowerRightFront.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(0, 0); glVertex3f (this->lowerRightFront.GetX(), this->lowerRightFront.GetY(), this->upperLeftBack.GetZ());
-
-            glEnd();
-
-            // top wall
-            glBegin(GL_QUADS);
-                       glNormal3f(0,1,0);
-                       glTexCoord2d(0, 1); glVertex3f (this->upperLeftBack.GetX(), this->upperLeftBack.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 1); glVertex3f (this->lowerRightFront.GetX(), this->upperLeftBack.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 0); glVertex3f (this->lowerRightFront.GetX(), this->upperLeftBack.GetY(), this->upperLeftBack.GetZ());
-                       glTexCoord2d(0, 0); glVertex3f (this->upperLeftBack.GetX(), this->upperLeftBack.GetY(), this->upperLeftBack.GetZ());
-
-            glEnd();
-
-            // bottom wall
-            glBegin(GL_QUADS);
-                       glNormal3f(0,-1,0);
-                       glTexCoord2d(0, 1); glVertex3f (this->upperLeftBack.GetX(), this->lowerRightFront.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 1); glVertex3f (this->lowerRightFront.GetX(), this->lowerRightFront.GetY(), this->lowerRightFront.GetZ());
-                       glTexCoord2d(1, 0); glVertex3f (this->lowerRightFront.GetX(), this->lowerRightFront.GetY(), this->upperLeftBack.GetZ());
-                       glTexCoord2d(0, 0); glVertex3f (this->upperLeftBack.GetX(), this->lowerRightFront.GetY(), this->upperLeftBack.GetZ());
-
-            glEnd();
-
-        }
 
           bool CheckIfHit(Bullet* hittingBullet)
           {

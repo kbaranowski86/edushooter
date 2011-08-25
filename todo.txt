@@ -1,5 +1,6 @@
-- improve boxseset cycles changing, design something like queue
-- rationalize box hitting mechanism
-- design questioning mechanism
-- rapair texturing
+- consider how to pass parameters for singleton GetInstance function
+- add background for info text
+- add texturing on/off parameter for single rectangle
+- add color parameter for rectangle constructor
+- modify Room class to not override draw method
 - make mirror on the back wall of room

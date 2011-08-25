@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="BMPLoader.cpp" open="1" top="0" tabpos="22">
-		<Cursor position="1474" topLine="33" />
+	<File name="BMPLoader.cpp" open="1" top="0" tabpos="21">
+		<Cursor position="1476" topLine="27" />
 	</File>
 	<File name="BMPLoader.h" open="1" top="0" tabpos="1">
-		<Cursor position="1815" topLine="48" />
+		<Cursor position="1698" topLine="41" />
 	</File>
 	<File name="answerbox.h" open="1" top="0" tabpos="14">
-		<Cursor position="291" topLine="0" />
+		<Cursor position="634" topLine="1" />
 	</File>
-	<File name="answerboxset.h" open="1" top="0" tabpos="4">
-		<Cursor position="205" topLine="0" />
+	<File name="answerboxset.h" open="1" top="1" tabpos="4">
+		<Cursor position="1409" topLine="35" />
 	</File>
 	<File name="box.h" open="1" top="0" tabpos="2">
-		<Cursor position="2347" topLine="42" />
+		<Cursor position="3308" topLine="81" />
 	</File>
 	<File name="boxset.h" open="1" top="0" tabpos="3">
-		<Cursor position="2310" topLine="66" />
+		<Cursor position="1060" topLine="18" />
 	</File>
 	<File name="boxsetset.h" open="1" top="0" tabpos="13">
-		<Cursor position="1165" topLine="18" />
+		<Cursor position="333" topLine="3" />
 	</File>
-	<File name="bullet.h" open="1" top="0" tabpos="18">
-		<Cursor position="0" topLine="0" />
+	<File name="bullet.h" open="1" top="0" tabpos="16">
+		<Cursor position="0" topLine="6" />
 	</File>
 	<File name="infobar.h" open="1" top="0" tabpos="15">
-		<Cursor position="1128" topLine="36" />
+		<Cursor position="162" topLine="1" />
 	</File>
 	<File name="light.h" open="1" top="0" tabpos="8">
-		<Cursor position="609" topLine="0" />
+		<Cursor position="98" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="88" topLine="0" />
+		<Cursor position="332" topLine="0" />
 	</File>
 	<File name="point.h" open="1" top="0" tabpos="10">
 		<Cursor position="697" topLine="0" />
 	</File>
-	<File name="questionboxset.h" open="1" top="0" tabpos="19">
+	<File name="questionboxset.h" open="1" top="0" tabpos="17">
 		<Cursor position="32" topLine="0" />
 	</File>
 	<File name="rectangle.h" open="1" top="0" tabpos="9">
-		<Cursor position="741" topLine="59" />
+		<Cursor position="1345" topLine="37" />
 	</File>
-	<File name="room.h" open="1" top="0" tabpos="20">
-		<Cursor position="408" topLine="30" />
+	<File name="room.h" open="1" top="0" tabpos="18">
+		<Cursor position="5039" topLine="69" />
 	</File>
-	<File name="scene.h" open="1" top="0" tabpos="17">
-		<Cursor position="1825" topLine="60" />
+	<File name="scene.h" open="1" top="0" tabpos="19">
+		<Cursor position="1719" topLine="53" />
 	</File>
 	<File name="score.h" open="1" top="0" tabpos="12">
-		<Cursor position="1077" topLine="32" />
+		<Cursor position="703" topLine="0" />
 	</File>
 	<File name="threelevelbox.h" open="1" top="0" tabpos="6">
-		<Cursor position="1798" topLine="37" />
+		<Cursor position="1186" topLine="6" />
 	</File>
 	<File name="threelevelboxset.h" open="1" top="0" tabpos="5">
 		<Cursor position="429" topLine="0" />
 	</File>
-	<File name="utils.h" open="1" top="0" tabpos="16">
-		<Cursor position="256" topLine="0" />
+	<File name="utils.h" open="1" top="0" tabpos="20">
+		<Cursor position="662" topLine="3" />
 	</File>
 	<File name="weapon.h" open="1" top="0" tabpos="7">
-		<Cursor position="85" topLine="100" />
+		<Cursor position="128" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>

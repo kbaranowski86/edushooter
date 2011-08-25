@@ -10,6 +10,7 @@
 // Project libraries
 #include "point.h"
 #include "utils.h"
+#include "rectangle.h"
 #include "weapon.h"
 #include "light.h"
 
@@ -42,7 +43,6 @@ class Scene
       // Initializing all neccessary objects
       static void InitializeScene()
       {
-
             Score::GetInstance().TimeStart();
 
             /*funkcje biblioteki glut s¹ odpowiedzialne za przenosnosc kodu miedzy OSami (cross-platform)*/
@@ -52,24 +52,19 @@ class Scene
             // Ustawiamy rozmiar pocz¹tkowy okna na 100 na 100:
             glutInitWindowSize(1024, 768);
 
-            // Enable textures
-            glEnable(GL_TEXTURE_2D);
-
             // Tworzymy okno
             glutCreateWindow("Simple Shooter");
             glutFullScreen();
 
             glutSetCursor(GLUT_CURSOR_NONE);
+
             // Ustawiamy kolor, do którego bêdzie czyszczony ekran funkcj¹ glClear();
             glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
 
-            // Texture sinitializing
-            BMPClass bmp;
-            BMPLoad("cegla.bmp",bmp);
+            // Ustawiamy parametry textur
             glEnable(GL_TEXTURE_2D);
-            glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MIN_FILTER,GL_LINEAR);
-            glTexParameteri(GL_TEXTURE_2D,GL_TEXTURE_MAG_FILTER,GL_LINEAR);
-            glTexImage2D(GL_TEXTURE_2D,0,3,bmp.width,bmp.height,0,GL_RGB,GL_UNSIGNED_BYTE,bmp.bytes);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
             // Ustawiamy odpowiednie funkcje do obs³ugi zdarzeñ [cross-platform]:
             glutDisplayFunc(Display);
@@ -191,21 +186,3 @@ class Scene
       }
 
 };
-
-double Scene::tX = 0;
-double Scene::tY = 0;
-point Scene::camPosition = point(0, 0, 12);
-int Scene::windowX = 0;
-int Scene::windowY = 0;
-double Scene::tmpX = 0;
-double Scene::tmpY = 0;
-BoxSetSet Scene::BSS;
-Room Scene::room(point(-10 , 5, -8), point(10, -0.99, 20), 1, 1, 0, "cegla.bmp");
-Weapon Scene::Wpon(point(camPosition.GetX(), camPosition.GetY(), camPosition.GetZ()), 200, &Scene::BSS, &Scene::room);
-
-//Light arrays of parameters
-GLdouble ambient[] = {0.3, 0.3, 0.3, 1};
-GLdouble specular[] = {0.4, 0.4, 0.4, 0.4};
-GLdouble diffuse[] = {1, 1, 1, 1};
-
-Light Scene::L1 = Light(point(1,3,5), ambient, specular, diffuse);
