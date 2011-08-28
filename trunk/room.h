@@ -10,14 +10,14 @@ class Room : public Box
     Rect bottomWall;
 
       public:
-          Room(point upperLeftBack = point(0,0,0), point lowerRightFront=point(0,0,0), float r = 0, float g = 0, float b = 0, char* texturePath = "") :
-            Box(upperLeftBack, lowerRightFront, r, g, b, 0, texturePath),
-            backWall( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), point(0, 0, 1), Utils::XY, texturePath ),
-            frontWall( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, point(0, 0, -1), Utils::XY, texturePath ),
-            leftWall( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), point(1, 0, 0), Utils::ZY, texturePath ),
-            rightWall( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(-1, 0, 0), Utils::ZY, texturePath ),
-            topWall( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), point(0, 1, 0), Utils::XZ, texturePath ),
-            bottomWall( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(0, -1, 0), Utils::XZ, texturePath )
+          Room(point upperLeftBack = point(0,0,0), point lowerRightFront=point(0,0,0), point color = point( 0, 0, 0 ), char* texturePath = "") :
+            Box(upperLeftBack, lowerRightFront, color, 0, texturePath),
+            backWall( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), color, point(0, 0, 1), Utils::XY, texturePath ),
+            frontWall( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), color, lowerRightFront, point(0, 0, -1), Utils::XY, texturePath ),
+            leftWall( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), color, point(1, 0, 0), Utils::ZY, texturePath ),
+            rightWall( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), color, lowerRightFront, point(-1, 0, 0), Utils::ZY, texturePath ),
+            topWall( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), color, point(0, 1, 0), Utils::XZ, texturePath ),
+            bottomWall( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), color, lowerRightFront, point(0, -1, 0), Utils::XZ, texturePath )
           {
 
           }

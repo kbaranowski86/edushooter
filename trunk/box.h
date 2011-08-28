@@ -29,25 +29,26 @@ class Box
         double r;
         double g;
         double b;
-        double hitR;
-        double hitG;
-        double hitB;
+        point hitColor;
         double moveDirection;
         const double initialMoveDirection;
         bool hit;
+        point color;
+        point defaultColor;
 
         char* texturePath;
         BMPClass textureImage;
 
-        Box( point upperLeftBack, point lowerRightFront, double r, double g, double b, double pointsNum, char* texturePath = "" ):
+        Box( point upperLeftBack, point lowerRightFront, point color, double pointsNum, char* texturePath = "" ):
             initialMoveDirection( 0.3 ),
-            backWall( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), point(0, 0, -1), Utils::XY, texturePath ),
-            frontWall( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, point(0, 0, 1), Utils::XY, texturePath ),
-            leftWall( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), point(-1, 0, 0), Utils::ZY, texturePath ),
-            rightWall( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(1, 0, 0), Utils::ZY, texturePath ),
-            topWall( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), point(0, 1, 0), Utils::XZ, texturePath ),
-            bottomWall( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(0, -1, 0), Utils::XZ, texturePath )
+            backWall( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), point(0, 0, -1), color, Utils::XY, texturePath ),
+            frontWall( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, point(0, 0, 1), color, Utils::XY, texturePath ),
+            leftWall( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), point(-1, 0, 0), color, Utils::ZY, texturePath ),
+            rightWall( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(1, 0, 0), color, Utils::ZY, texturePath ),
+            topWall( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), point(0, 1, 0), color, Utils::XZ, texturePath ),
+            bottomWall( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(0, -1, 0), color, Utils::XZ, texturePath )
         {
+            this->defaultColor = color;
 
                 if( texturePath != "" )
                 {
@@ -63,9 +64,7 @@ class Box
                 this->r = r;
                 this->g = g;
                 this->b = b;
-                this->hitR = 0.8;
-                this->hitG = 0.8;
-                this->hitB = 0.8;
+                this->hitColor = point( 0.8, 0.8, 0.8 );
 
                 this->pointsNum = pointsNum;
 
@@ -89,13 +88,23 @@ class Box
             glPolygonMode(GL_FRONT, GL_FILL);
             glPolygonMode(GL_BACK, GL_FILL);
 
-            if( GetHit() == false )
+            if( GetHit() == true )
             {
-                glColor3f(r, g, b);
+                backWall.SetColor( hitColor );
+                frontWall.SetColor( hitColor );
+                leftWall.SetColor( hitColor );
+                rightWall.SetColor( hitColor );
+                topWall.SetColor( hitColor );
+                bottomWall.SetColor( hitColor );
             }
             else
             {
-                glColor3f(hitR, hitG, hitB);
+                backWall.SetColor( defaultColor );
+                frontWall.SetColor( defaultColor );
+                leftWall.SetColor( defaultColor );
+                rightWall.SetColor( defaultColor );
+                topWall.SetColor( defaultColor );
+                bottomWall.SetColor( defaultColor );
             }
 
             backWall.Draw();
@@ -195,6 +204,8 @@ class Box
                  moveDirection = -0.1;
 
                  hittingBullet->GiveMomentum( point(0, 0, 0) );
+
+                 InfoBar::GetInstance().SetHitIndicating();
 
                  return true;
              }

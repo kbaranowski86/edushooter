@@ -306,11 +306,11 @@
 1164123868 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter_developer\bmploader.cpp
 	"BMPLoader.h"
 
-1314535994 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\main.cpp
+1314553094 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\main.cpp
 	<windows.h>
 	"scene.h"
 
-1314534941 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\scene.h
+1314551972 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\scene.h
 	<windows.h>
 	<GL/glut.h>
 	<GL/gl.h>
@@ -331,29 +331,29 @@
 	<math.h>
 	<iostream>
 
-1314217159 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\weapon.h
+1314552354 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\weapon.h
 	<iostream>
 	"bullet.h"
 	"infobar.h"
 	"boxsetset.h"
 	"room.h"
 
-1288639482 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\bullet.h
+1314552436 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\bullet.h
 	<iostream>
 	<GL/glut.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1314536009 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\boxset.h
+1314552753 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\boxset.h
 	<time.h>
 	<stdlib.h>
 	"box.h"
 
-1314536175 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\threelevelbox.h
+1314552876 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\threelevelbox.h
 	<cmath>
 	"box.h"
 
-1314535516 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\box.h
+1314557398 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\box.h
 	"score.h"
 
 1298738633 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\bmploader.h
@@ -363,21 +363,22 @@
 1301337681 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\score.h
 	<time.h>
 
-1314535942 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\rectangle.h
+1314553945 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\rectangle.h
 	"BMPLoader.h"
 
 1301088805 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\utils.h
 
-1314481405 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\room.h
+1314553059 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\room.h
 
-1299619509 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\light.h
+1314551972 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\light.h
 
-1314481405 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\infobar.h
+1314557122 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\infobar.h
+	<time.h>
 
 1164127468 source:c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\bmploader.cpp
 	"BMPLoader.h"
 
-1314485672 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\answerboxset.h
+1314552932 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\answerboxset.h
 	<iostream>
 	"answerbox.h"
 
@@ -389,6 +390,6 @@
 	"boxset.h"
 	"threelevelbox.h"
 
-1314482694 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\answerbox.h
+1314552911 c:\documents and settings\kondziu\moje dokumenty\projekty c++\edu shooter\answerbox.h
 	"box.h"
 
