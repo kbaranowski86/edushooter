@@ -14,6 +14,8 @@ class Rect
 
       char* texturePath;
       BMPClass textureImage;
+      bool lightingEnable;
+      point color;
 
       Utils::Orientation orientation;
 
@@ -21,8 +23,12 @@ class Rect
 
       Rect(){}
 
-      Rect(point upperLeft, point lowerRight, point normalVector, Utils::Orientation orientation = Utils::XY, char* texturePath = "", bool camFollowing = false)
+      Rect(point upperLeft, point lowerRight, point normalVector, point color, Utils::Orientation orientation = Utils::XY, char* texturePath = "", bool camFollowing = false, bool lightingEnable = true)
       {
+         this->color = color;
+
+         this->lightingEnable = lightingEnable;
+
          this->texturePath = texturePath;
 
          this->camFollowing = camFollowing;
@@ -38,8 +44,23 @@ class Rect
          this->orientation = orientation;
       }
 
+      void SetColor( point color )
+      {
+          this->color = color;
+      }
+
       void Draw()
       {
+          if( lightingEnable == true )
+          {
+              glEnable( GL_LIGHTING );
+          }
+          else
+          {
+              glDisable( GL_LIGHTING );
+          }
+
+
           if( camFollowing == true )
           {
               glPushMatrix();
@@ -56,6 +77,8 @@ class Rect
            {
                glDisable(GL_TEXTURE_2D);
            }
+
+           glColor3f( color.GetX(), color.GetY(), color.GetZ() );
 
            glBegin(GL_QUADS);
                     glNormal3f(normalVector.GetX(), normalVector.GetY(), normalVector.GetZ());

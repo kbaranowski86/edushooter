@@ -18,11 +18,11 @@ class ThreeLevelBox : public Box
    public:
 
       ThreeLevelBox(point upperLeftBack, point lowerRightFront, char* texturePath):
-      Box( upperLeftBack, lowerRightFront, 0, 0, 0, 0.0f, texturePath ),
+      Box( upperLeftBack, lowerRightFront, point( 0, 0, 0 ), 0.0f, texturePath ),
       levelHeight( std::fabs( upperLeftBack.GetY() - lowerRightFront.GetY() ) / 3),
-      firstPiece( point( upperLeftBack.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), point( lowerRightFront.GetX(), upperLeftBack.GetY() - levelHeight, lowerRightFront.GetZ() ), 1, 0, 0, 2.0f, texturePath ),
-      secondPiece( point( upperLeftBack.GetX(), upperLeftBack.GetY() - levelHeight, upperLeftBack.GetZ()  ), point( lowerRightFront.GetX(), upperLeftBack.GetY() - 2 * levelHeight, lowerRightFront.GetZ() ),  0, 1, 0, 4.0f, texturePath ),
-      thirdPiece( point( upperLeftBack.GetX(), upperLeftBack.GetY() - 2 * levelHeight, upperLeftBack.GetZ()  ), lowerRightFront,  0, 0, 1, 8.0f, texturePath )
+      firstPiece( point( upperLeftBack.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), point( lowerRightFront.GetX(), upperLeftBack.GetY() - levelHeight, lowerRightFront.GetZ() ), point( 1, 0, 0 ), 2.0f, texturePath ),
+      secondPiece( point( upperLeftBack.GetX(), upperLeftBack.GetY() - levelHeight, upperLeftBack.GetZ()  ), point( lowerRightFront.GetX(), upperLeftBack.GetY() - 2 * levelHeight, lowerRightFront.GetZ() ),  point( 0, 1, 0 ), 4.0f, texturePath ),
+      thirdPiece( point( upperLeftBack.GetX(), upperLeftBack.GetY() - 2 * levelHeight, upperLeftBack.GetZ()  ), lowerRightFront,  point( 0, 0, 1 ), 8.0f, texturePath )
       {
       }
 

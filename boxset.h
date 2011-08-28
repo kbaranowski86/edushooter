@@ -33,9 +33,7 @@ class BoxSet
                 boxes[ i ][ j ] = new Box(
                             point( 4.7 - j - spacing * j - 1.0, verticalPosition, i * 3 ),
                             point( 4.7 - j - spacing * j, verticalPosition - 1.3, i * 3 + depth),
-                            0.7,
-                            0.7,
-                            0.7,
+                            point(0.7, 0.7, 0.7),
                             2, "gres.bmp" );
              }
         }

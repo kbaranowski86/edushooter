@@ -1,3 +1,5 @@
+#include <time.h>
+
 class InfoBar
 {
     private:
@@ -6,13 +8,17 @@ class InfoBar
         int bullets;
         point position;
 
+        time_t hitTime, actualTime;
+        float hitIndicatingLastTime;
+
         Rect barBg;
 
     public:
         InfoBar()
         {
+            hitTime = 0;
             position = point( 0, 0, 0);
-            barBg = Rect( point( 0.15, 0.29, position.GetZ() -0.51 ) , point( 0.3, 0.215, position.GetZ() -0.51 ), point( 0, 0, -1 ), Utils::XY, "", true );
+            barBg = Rect( point( 0.15, 0.29, position.GetZ() -0.51 ) , point( 0.3, 0.215, position.GetZ() -0.51 ), point( 0, 0, -1 ), point( 1, 1, 1), Utils::XY, "", true, false );
         }
         InfoBar(const InfoBar &);
         InfoBar& operator=(const InfoBar&);
@@ -30,6 +36,27 @@ class InfoBar
         void SetBullets(int bullets)
         {
             this->bullets = bullets;
+        }
+
+        void SetHitIndicating()
+        {
+            time( &hitTime );
+        }
+
+        bool CheckHitIndicating()
+        {
+            time( &actualTime );
+
+            hitIndicatingLastTime = difftime( actualTime, hitTime );
+
+            if( hitIndicatingLastTime <= 1 )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         void SetAll(int points, double playTime, int bullets)
@@ -55,6 +82,17 @@ class InfoBar
             char pointsString[100];
             char playTimeString[100];
             char bulletsString[100];
+
+            hitIndicatingLastTime = difftime( actualTime, hitTime );
+
+            if( CheckHitIndicating() == true )
+            {
+                barBg.SetColor( point( 0, 1, 0 ) );
+            }
+            else
+            {
+                barBg.SetColor( point( 1, 1, 1 ) );
+            }
 
             barBg.Draw();
 

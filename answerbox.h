@@ -10,8 +10,8 @@ class AnswerBox : public Box
 
     public:
 
-        AnswerBox( point upperLeftBack, point lowerRightFront, double r, double g, double b, double pointsNum, char* texturePath = "" ):
-        Box( upperLeftBack, lowerRightFront, r, g, b, pointsNum, texturePath )
+        AnswerBox( point upperLeftBack, point lowerRightFront, point color, double pointsNum, char* texturePath = "" ):
+        Box( upperLeftBack, lowerRightFront, color, pointsNum, texturePath )
         {
             answerIndex = 0;
         }
