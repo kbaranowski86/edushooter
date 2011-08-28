@@ -5,34 +5,34 @@
 		<Cursor position="1476" topLine="27" />
 	</File>
 	<File name="BMPLoader.h" open="1" top="0" tabpos="1">
-		<Cursor position="1698" topLine="41" />
+		<Cursor position="1682" topLine="0" />
 	</File>
 	<File name="answerbox.h" open="1" top="0" tabpos="14">
-		<Cursor position="634" topLine="1" />
+		<Cursor position="322" topLine="0" />
 	</File>
 	<File name="answerboxset.h" open="1" top="1" tabpos="4">
-		<Cursor position="1409" topLine="35" />
+		<Cursor position="975" topLine="123" />
 	</File>
 	<File name="box.h" open="1" top="0" tabpos="2">
-		<Cursor position="3308" topLine="81" />
+		<Cursor position="5303" topLine="143" />
 	</File>
 	<File name="boxset.h" open="1" top="0" tabpos="3">
-		<Cursor position="1060" topLine="18" />
+		<Cursor position="954" topLine="70" />
 	</File>
 	<File name="boxsetset.h" open="1" top="0" tabpos="13">
-		<Cursor position="333" topLine="3" />
+		<Cursor position="431" topLine="23" />
 	</File>
 	<File name="bullet.h" open="1" top="0" tabpos="16">
 		<Cursor position="0" topLine="6" />
 	</File>
 	<File name="infobar.h" open="1" top="0" tabpos="15">
-		<Cursor position="162" topLine="1" />
+		<Cursor position="1914" topLine="17" />
 	</File>
 	<File name="light.h" open="1" top="0" tabpos="8">
 		<Cursor position="98" topLine="0" />
 	</File>
 	<File name="main.cpp" open="1" top="0" tabpos="11">
-		<Cursor position="332" topLine="0" />
+		<Cursor position="600" topLine="0" />
 	</File>
 	<File name="point.h" open="1" top="0" tabpos="10">
 		<Cursor position="697" topLine="0" />
@@ -41,25 +41,25 @@
 		<Cursor position="32" topLine="0" />
 	</File>
 	<File name="rectangle.h" open="1" top="0" tabpos="9">
-		<Cursor position="1345" topLine="37" />
+		<Cursor position="5184" topLine="144" />
 	</File>
 	<File name="room.h" open="1" top="0" tabpos="18">
-		<Cursor position="5039" topLine="69" />
+		<Cursor position="349" topLine="5" />
 	</File>
 	<File name="scene.h" open="1" top="0" tabpos="19">
-		<Cursor position="1719" topLine="53" />
+		<Cursor position="2272" topLine="72" />
 	</File>
 	<File name="score.h" open="1" top="0" tabpos="12">
 		<Cursor position="703" topLine="0" />
 	</File>
 	<File name="threelevelbox.h" open="1" top="0" tabpos="6">
-		<Cursor position="1186" topLine="6" />
+		<Cursor position="439" topLine="7" />
 	</File>
 	<File name="threelevelboxset.h" open="1" top="0" tabpos="5">
-		<Cursor position="429" topLine="0" />
+		<Cursor position="692" topLine="0" />
 	</File>
 	<File name="utils.h" open="1" top="0" tabpos="20">
-		<Cursor position="662" topLine="3" />
+		<Cursor position="1022" topLine="8" />
 	</File>
 	<File name="weapon.h" open="1" top="0" tabpos="7">
 		<Cursor position="128" topLine="0" />

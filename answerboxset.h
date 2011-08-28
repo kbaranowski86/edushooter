@@ -31,7 +31,7 @@ class AnswerBoxSet : public BoxSet
                                 0.7,
                                 0.7,
                                 0.7,
-                                2 );
+                                2, "marmur.bmp" );
                  }
             }
 

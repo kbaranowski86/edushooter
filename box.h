@@ -79,9 +79,9 @@ class Box
 
                 this->moveDirection = initialMoveDirection;
 
-                width = lowerRightFront.GetX() - upperLeftBack.GetX();
-                height = upperLeftBack.GetY() - lowerRightFront.GetY();
-                depth = lowerRightFront.GetZ() - upperLeftBack.GetZ();
+                width = fabs( lowerRightFront.GetX() - upperLeftBack.GetX() );
+                height = fabs( upperLeftBack.GetY() - lowerRightFront.GetY() );
+                depth = fabs( lowerRightFront.GetZ() - upperLeftBack.GetZ() );
         }
 
         virtual void Draw()
@@ -148,20 +148,18 @@ class Box
             if( handler == 0 )
             {
                 upperLeftBack = p;
-                lowerRightFront = point( p.GetX() + width, p.GetY() - height, p.GetZ() + depth );
             }
             else
             {
-                upperLeftBack = point( p.GetX() - width, p.GetY() + height, p.GetZ() - depth );
                 lowerRightFront = p;
             }
 
-            backWall = Rect( upperLeftBack, point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), point(0, 0, -1) );
-            frontWall = Rect( point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, point(0, 0, 1) );
-            leftWall = Rect( upperLeftBack, point(upperLeftBack.GetX(), lowerRightFront.GetY(), lowerRightFront.GetZ()), point(-1, 0, 0), Utils::ZY );
-            rightWall =  Rect( point( lowerRightFront.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(1, 0, 0), Utils::ZY );
-            topWall = Rect( upperLeftBack, point( lowerRightFront.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ() ), point(0, 1, 0), Utils::XZ );
-            bottomWall = Rect( point( upperLeftBack.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ() ), lowerRightFront, point(0, -1, 0), Utils::XZ );
+            backWall.MoveTo( p, handler );
+            frontWall.MoveTo( point( p.GetX(), p.GetY(), p.GetZ() + depth ), handler );
+            leftWall.MoveTo( p, handler );
+            rightWall.MoveTo( point( p.GetX() + width, p.GetY(), p.GetZ() ), handler );
+            topWall.MoveTo( p, handler );
+            bottomWall.MoveTo( point( p.GetX(), p.GetY() - height, p.GetZ() ), handler );
         }
 
         void SetColor(point vector)

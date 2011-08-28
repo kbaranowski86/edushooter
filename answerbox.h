@@ -6,10 +6,12 @@ class AnswerBox : public Box
     private:
         int answerIndex;
 
+        std::string texturePath;
+
     public:
 
-        AnswerBox( point upperLeftBack, point lowerRightFront, double r, double g, double b, double pointsNum ):
-        Box( upperLeftBack, lowerRightFront, r, g, b, pointsNum )
+        AnswerBox( point upperLeftBack, point lowerRightFront, double r, double g, double b, double pointsNum, char* texturePath = "" ):
+        Box( upperLeftBack, lowerRightFront, r, g, b, pointsNum, texturePath )
         {
             answerIndex = 0;
         }
