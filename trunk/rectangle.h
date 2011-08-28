@@ -108,6 +108,80 @@ class Rect
           }
       }
 
+      float GetWidth()
+      {
+          switch( orientation )
+          {
+              case Utils::XY:
+                return fabs( this->lowerRight.GetX() - this->upperLeft.GetX() );
+                break;
+
+              case Utils::XZ:
+                return fabs( this->lowerRight.GetX() - this->upperLeft.GetX() );
+                break;
+
+              case Utils::ZY:
+                return fabs( this->lowerRight.GetZ() - this->upperLeft.GetZ() );
+          }
+
+      }
+
+      float GetHeight()
+      {
+          switch( orientation )
+          {
+              case Utils::XY:
+                return fabs( this->upperLeft.GetY() - this->lowerRight.GetY() );
+                break;
+
+              case Utils::XZ:
+                return fabs( this->upperLeft.GetZ() - this->lowerRight.GetZ() );
+                break;
+
+              case Utils::ZY:
+                return fabs( this->upperLeft.GetY() - this->lowerRight.GetY() );
+          }
+      }
+
+      // move point p, handling upperLeft point (0) (default) or lowerRight point (1)
+      float MoveTo( point p, bool handle = 0 )
+      {
+          switch( orientation )
+          {
+              case Utils::XY:
+                  if( handle == 0 )
+                  {
+                      SetCoords( p, point( p.GetX() + GetWidth(), p.GetY() - GetHeight(), p.GetZ() ) );
+                  }
+                  else
+                  {
+                      SetCoords( point( p.GetX() - GetWidth(), p.GetY() + GetHeight(), p.GetZ() ), p );
+                  }
+
+                  break;
+              case Utils::XZ:
+                  if( handle == 0 )
+                  {
+                      SetCoords( p, point( p.GetX() + GetWidth(), p.GetY(), p.GetZ() + GetHeight() ) );
+                  }
+                  else
+                  {
+                      SetCoords( point( p.GetX() - GetWidth(), p.GetY(), p.GetZ() - GetHeight() ), p );
+                  }
+                  break;
+
+              case Utils::ZY:
+                  if( handle == 0 )
+                  {
+                      SetCoords( p, point( p.GetX(), p.GetY() - GetHeight(), p.GetZ() + GetWidth() ) );
+                  }
+                  else
+                  {
+                      SetCoords( point( p.GetX(), p.GetY() + GetHeight(), p.GetZ() - GetWidth() ), p );
+                  }
+          }
+      }
+
       void MoveBy(point p)
       {
            this->upperLeft = this->upperLeft + p;

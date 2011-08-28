@@ -1,6 +1,8 @@
+- resolve texturing problem (some boxes are not textired sometimes)
+	> probably the new rectangles delcarationi Box::MoveTO method is a problem
+	> write a MoveTo method for rectangle and call it for each rectangle in a box (need check handle point and orientation)
 - consider how to pass parameters for singleton GetInstance function
 - add background for info text
-- add texturing on/off parameter for single rectangle
 - add color parameter for rectangle constructor
-- modify Room class to not override draw method
+- add lighting settings for specific rectangle
 - make mirror on the back wall of room

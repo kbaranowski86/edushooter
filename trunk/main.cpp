@@ -15,7 +15,7 @@ int Scene::windowY = 0;
 double Scene::tmpX = 0;
 double Scene::tmpY = 0;
 BoxSetSet Scene::BSS;
-Room Scene::room(point(-10 , 5, -8), point(10, -0.99, 20), 1, 1, 0, "cegla.bmp");
+Room Scene::room(point(-10 , 5, -8), point(10, -0.99, 20), 1, 1, 1, "cegla.bmp");
 Weapon Scene::Wpon(point(camPosition.GetX(), camPosition.GetY(), camPosition.GetZ()), 200, &Scene::BSS, &Scene::room);
 
 //Light arrays of parameters
