@@ -17,7 +17,7 @@ class ThreeLevelBoxSet : public BoxSet
              {
                 boxes[i][j] = new ThreeLevelBox(
                             point( 4.7 - j - spacing * j - 1, verticalPosition, i * 3 ),
-                            point( 4.7 - j - spacing * j, -1.3 + verticalPosition, i * 3 + depth), "cegla.bmp");
+                            point( 4.7 - j - spacing * j, -1.3 + verticalPosition, i * 3 + depth), "img\\cegla.bmp");
              }
         }
         Shuffle();
