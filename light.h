@@ -1,35 +1,19 @@
-// Project libraries
+//3rd party libraries
+#include <GL/gl.h>
 
+// Project libraries
+#include "point.h"
 
 // definition of light sources
 class Light
 {
-      public:
-      point position;
-      GLdouble* ambient;
-      GLdouble* specular;
-      GLdouble* diffuse;
+    public:
+        point position;
+        GLdouble* ambient;
+        GLdouble* specular;
+        GLdouble* diffuse;
 
-     Light(point position, GLdouble* ambient, GLdouble* specular, GLdouble* diffuse)
-     {
-           this->position = position;
-           this->ambient = ambient;
-           this->specular = specular;
-           this->diffuse = diffuse;
-     }
-     void put()
-     {
+        Light(point, GLdouble*, GLdouble*, GLdouble*);
 
-           GLfloat ambientLight[] = {ambient[0], ambient[1], ambient[2], ambient[3]};
-           GLfloat Specular[] = {specular[0], specular[1], specular[2], specular[3]};
-           GLfloat Diffuse[] = {diffuse[0], specular[1], specular[2], specular[3]};
-           GLfloat lightPos[] = {this->position.GetX(), this->position.GetY(), this->position.GetZ(), 1};
-           glEnable(GL_LIGHTING);
-
-           glLightfv(GL_LIGHT0, GL_AMBIENT, ambientLight) ;
-           glLightfv(GL_LIGHT0, GL_SPECULAR, Specular);
-           glLightfv(GL_LIGHT0, GL_DIFFUSE, Diffuse);
-           glLightfv(GL_LIGHT0, GL_POSITION,lightPos);
-           glEnable(GL_LIGHT0);
-     }
+        void put();
 };

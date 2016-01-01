@@ -2,6 +2,9 @@
 #include <math.h>
 #include <iostream>
 
+#ifndef POINT_H
+#define POINT_H
+
 using namespace std;
 
 class point{  //definicja punktu w przestrzeni
@@ -10,98 +13,25 @@ class point{  //definicja punktu w przestrzeni
        double x, y, z;
 
     public:
-       point(double x = 0.0f, double y = 0.0f, double z = 0.0f){
-            this->x = x;
-            this->y = y;
-            this->z = z;
-       }
+       point();
+       point(double, double, double);
 
-       double ComputeLength(){
-            return sqrt(this->x * this->x + this->y * this->y + this->z * this->z);
-       }
-
-       void SetX(double value){
-            this->x = value;
-       }
-
-       void SetY(double value){
-            this->y = value;
-       }
-
-       void SetZ(double value){
-            this->z = value;
-       }
-
-       void SetCoords(double x, double y, double z)
-       {
-            this->x = x;
-            this->y = y;
-            this->z = z;
-       }
-
-       double GetX(){
-             return x;
-       }
-
-       double GetY(){
-             return y;
-       }
-
-       double GetZ(){
-             return z;
-       }
-
-       void normalize(){
-             double length = ComputeLength();
-             this->x = this->x / length;
-             this->y = this->y / length;
-             this->z = this->z / length;
-       }
-
-       point operator+(const point& tmp){
-             return point(this->x + tmp.x, this->y + tmp.y, this->z + tmp.z);
-       }
-
-       point operator-(const point& tmp){
-             return point( this->x - tmp.x, this->y - tmp.y, this->z - tmp.z);
-       }
-
-       point operator/(const double& tmp){
-             return point( this->x / tmp, this->y / tmp, this->z / tmp);
-       }
-
-       point operator*(const double& tmp){
-             return point( this->x * tmp, this->y * tmp, this->z * tmp);
-       }
-
-       point& operator=(const point& tmp){
-              if(&tmp==this) return *this;
-              x = tmp.x;
-              y = tmp.y;
-              z = tmp.z;
-              return *this;
-       }
-
-       bool operator==(const point& tmp){
-            if( this->x == tmp.x && this->y == tmp.y && this->z == tmp.z )
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-       }
-
-       bool operator!=(const point& tmp){
-            if( !(this->x == tmp.x || this->y == tmp.y || this->z == tmp.z ) )
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-       }
-
+       double ComputeLength();
+       void SetX(double);
+       void SetY(double);
+       void SetZ(double);
+       void SetCoords(double, double, double);
+       double GetX();
+       double GetY();
+       double GetZ();
+       void normalize();
+       point operator+(const point&);
+       point operator-(const point&);
+       point operator/(const double&);
+       point operator*(const double&);
+       point& operator=(const point&);
+       bool operator==(const point&);
+       bool operator!=(const point&);
 };
+
+#endif

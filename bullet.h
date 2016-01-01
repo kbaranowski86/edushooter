@@ -1,14 +1,18 @@
 //System libraries
 #include <iostream>
+#include <windows.h>
 
 //GL libraries
 #include <GL/glut.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
 
+//project libraries
+#include "point.h"
+#ifndef BULLET_H
+#define BULLET_H
+
 using namespace std;
-
-
 
 class Bullet{ //definicja pocisku
 
@@ -20,49 +24,19 @@ class Bullet{ //definicja pocisku
              // Flag indicating if bullet has a momentum
              point momentum;
 
-             Bullet(){
-                      this->momentum = point(0, 0, 0);
-                      this->position = point(0, 0, 12);
-             }
+             Bullet();
 
-             Bullet(point startPoint){
-                  this->momentum = point(0, 0, 0);
-                  this->position = startPoint;
-             }
+             Bullet(point startPoint);
 
              // Draw bullet
-             void Draw()
-             {
-                  glEnable( GL_LIGHTING );
+             void Draw();
 
-                  glColor3f(0.5,0.5,0.5);
+             point GetPosition();
 
-                  // Move bullet
-                  if( momentum != point(0, 0, 0) )
-                  {
-                      glPushMatrix();
-                         glTranslatef( this->position.GetX(), this->position.GetY(), this->position.GetZ() );
-                         glutSolidSphere(0.03, 20, 20);
-                         glLoadIdentity();
-                      glPopMatrix();
-
-                      position = position + momentum / 2.5;
-                  }
-             }
-
-             point GetPosition()
-             {
-                return position;
-             }
-
-             point GetMomentum()
-             {
-                return momentum;
-             }
+             point GetMomentum();
 
              // Give momentum for a bullet
-             void GiveMomentum(point momentum)
-             {
-                this->momentum = momentum;
-             }
+             void GiveMomentum(point);
 };
+
+#endif // BULLET_H

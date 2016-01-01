@@ -1,5 +1,7 @@
 #include <iostream>
 #include "answerbox.h"
+#ifndef ANSWERBOXSET_H
+#define ANSWERBOXSET_H
 
 class AnswerBoxSet : public BoxSet
 {
@@ -214,3 +216,4 @@ class AnswerBoxSet : public BoxSet
             }
         }
 };
+#endif // ANSWERBOXSET_H

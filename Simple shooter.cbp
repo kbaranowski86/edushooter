@@ -46,27 +46,44 @@
 		</Linker>
 		<Unit filename="BMPLoader.cpp" />
 		<Unit filename="BMPLoader.h" />
+		<Unit filename="answerbox.cpp" />
 		<Unit filename="answerbox.h" />
 		<Unit filename="answerboxset.h" />
+		<Unit filename="box.cpp" />
 		<Unit filename="box.h" />
+		<Unit filename="boxset.cpp" />
 		<Unit filename="boxset.h" />
+		<Unit filename="boxsetset.cpp" />
 		<Unit filename="boxsetset.h" />
+		<Unit filename="bullet.cpp" />
 		<Unit filename="bullet.h" />
 		<Unit filename="img/cegla.bmp" />
 		<Unit filename="img/gres.bmp" />
 		<Unit filename="img/marmur.bmp" />
+		<Unit filename="infobar.cpp" />
 		<Unit filename="infobar.h" />
+		<Unit filename="light.cpp" />
 		<Unit filename="light.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="point.cpp" />
 		<Unit filename="point.h" />
+		<Unit filename="questionboxset.cpp" />
 		<Unit filename="questionboxset.h" />
+		<Unit filename="rectangle.cpp" />
 		<Unit filename="rectangle.h" />
+		<Unit filename="room.cpp" />
 		<Unit filename="room.h" />
+		<Unit filename="scene.cpp" />
 		<Unit filename="scene.h" />
+		<Unit filename="score.cpp" />
 		<Unit filename="score.h" />
+		<Unit filename="threelevelbox.cpp" />
 		<Unit filename="threelevelbox.h" />
+		<Unit filename="threelevelboxset.cpp" />
 		<Unit filename="threelevelboxset.h" />
+		<Unit filename="utils.cpp" />
 		<Unit filename="utils.h" />
+		<Unit filename="weapon.cpp" />
 		<Unit filename="weapon.h" />
 		<Extensions>
 			<code_completion />

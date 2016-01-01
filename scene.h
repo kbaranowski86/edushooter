@@ -2,15 +2,10 @@
 
 #include <windows.h>
 
-//3rd party libraries
-#include <GL/glut.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
-
 // Project libraries
-#include "point.h"
-#include "utils.h"
-#include "rectangle.h"
+#include "room.h"
+#include "infobar.h"
+#include "boxsetset.h"
 #include "weapon.h"
 #include "light.h"
 

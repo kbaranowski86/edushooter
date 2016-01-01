@@ -37,7 +37,7 @@ void Scene::InitializeScene() {
 }
 
 void Scene::DrawObjects() {
-    InfoBar::GetInstance().DrawBar();
+    InfoBar::GetInstance().Draw();
     room.Draw();
     BSS.Animate();
     Wpon.DrawViewFinder();
@@ -71,9 +71,7 @@ void Scene::Idle(int) {
 }
 
 void Scene::MouseMotion(int x, int y) {
-    double s;
     srand(time(0));
-    s = rand() % 100;
 
     x = x - windowX / 2 ;
     y = y - windowY / 2 ;
@@ -104,7 +102,6 @@ void Scene::Display(void) {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glEnable (GL_DEPTH_TEST) ;
     glFrontFace(GL_CCW);
-    GLdouble gray[] = { 1, 1, 1, 1.0f };
 
     GLfloat  specref[] =  { 1.0f, 0.0f, 0.0f, 1.0f };
     glEnable(GL_COLOR_MATERIAL);
