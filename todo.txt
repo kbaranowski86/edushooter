@@ -1,6 +1,3 @@
-- consider how to pass parameters for singleton GetInstance function
-- add background for info text
-- add color parameter for rectangle constructor
-- add lighting settings for specific rectangle
-- add hit indicating on Info Bar
+- fix info bar bg problem - text shoudn't be rendered on it
+- improve memory management
 - make mirror on the back wall of room
