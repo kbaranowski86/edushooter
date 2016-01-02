@@ -1,14 +1,14 @@
 #include "rectangle.h"
 Rect::Rect() {}
 
-Rect::Rect(point upperLeft, point lowerRight, point normalVector, point color, Utils::Orientation orientation = Utils::XY, char* texturePath = "", bool camFollowing, bool lightingEnable)
+Rect::Rect(point upperLeft, point lowerRight, point normalVector, point color, Utils::Orientation orientation = Utils::XY, char* texturePath = NULL, bool camFollowing, bool lightingEnable)
 {
     this->color = color;
     this->lightingEnable = lightingEnable;
     this->texturePath = texturePath;
     this->camFollowing = camFollowing;
 
-    if( texturePath != "" )
+    if( texturePath != NULL )
     {
         BMPLoad(texturePath, textureImage);
     }
@@ -43,7 +43,7 @@ void Rect::Draw()
       glLoadIdentity();
     }
 
-    if( texturePath != "" )
+    if( texturePath != NULL )
     {
        glEnable(GL_TEXTURE_2D);
        glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage.width, textureImage.height, 0, GL_RGB,GL_UNSIGNED_BYTE, textureImage.bytes);

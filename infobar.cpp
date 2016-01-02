@@ -3,7 +3,7 @@
 InfoBar::InfoBar() {
     hitTime = 0;
     position = point( 0, 0, 0);
-    barBg = Rect( point( 0.15, 0.29, position.GetZ() -0.51 ) , point( 0.3, 0.215, position.GetZ() -0.51 ), point( 0, 0, -1 ), point( 1, 1, 1), Utils::XY, "", true, false );
+    barBg = Rect( point( 0.15, 0.29, position.GetZ() -0.51 ) , point( 0.3, 0.215, position.GetZ() -0.51 ), point( 0, 0, -1 ), point( 1, 1, 1), Utils::XY, NULL, true, false );
 }
 
 void InfoBar::SetPoints(int points) {
