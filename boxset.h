@@ -3,6 +3,8 @@
 
 //Project libraries
 #include "box.h"
+#ifndef BOXSET_H
+#define BOXSET_H
 
 // zestaw klocków
 class BoxSet
@@ -29,3 +31,4 @@ class BoxSet
 
     virtual void CheckBoxesForHit(Bullet*);
 };
+#endif // BOXSET_H
