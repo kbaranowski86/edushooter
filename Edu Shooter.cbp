@@ -48,6 +48,7 @@
 		<Unit filename="BMPLoader.h" />
 		<Unit filename="answerbox.cpp" />
 		<Unit filename="answerbox.h" />
+		<Unit filename="answerboxset.cpp" />
 		<Unit filename="answerboxset.h" />
 		<Unit filename="box.cpp" />
 		<Unit filename="box.h" />
