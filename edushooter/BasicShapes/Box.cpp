@@ -86,18 +86,18 @@ void Box::MoveAlongX(double x) {
 
 void Box::MoveAlongY(double y){
     this->MoveBy(Point(0, y, 0));
-    backWall.GetUpperLeft()->SetY( upperLeftBack.GetY() );
-    backWall.GetLowerRight()->SetY( lowerRightFront.GetY() );
-    frontWall.GetUpperLeft()->SetY( upperLeftBack.GetY() );
-    frontWall.GetLowerRight()->SetY( lowerRightFront.GetY() );
-    leftWall.GetUpperLeft()->SetY( upperLeftBack.GetY() );
-    leftWall.GetLowerRight()->SetY( lowerRightFront.GetY() );
-    rightWall.GetUpperLeft()->SetY( upperLeftBack.GetY() );
-    rightWall.GetLowerRight()->SetY( lowerRightFront.GetY() );
-    topWall.GetUpperLeft()->SetY( upperLeftBack.GetY() );
-    topWall.GetLowerRight()->SetY( upperLeftBack.GetY() );
-    bottomWall.GetUpperLeft()->SetY( lowerRightFront.GetY() );
-    bottomWall.GetLowerRight()->SetY( lowerRightFront.GetY() );
+    backWall.GetUpperLeft().SetY( upperLeftBack.GetY() );
+    backWall.GetLowerRight().SetY( lowerRightFront.GetY() );
+    frontWall.GetUpperLeft().SetY( upperLeftBack.GetY() );
+    frontWall.GetLowerRight().SetY( lowerRightFront.GetY() );
+    leftWall.GetUpperLeft().SetY( upperLeftBack.GetY() );
+    leftWall.GetLowerRight().SetY( lowerRightFront.GetY() );
+    rightWall.GetUpperLeft().SetY( upperLeftBack.GetY() );
+    rightWall.GetLowerRight().SetY( lowerRightFront.GetY() );
+    topWall.GetUpperLeft().SetY( upperLeftBack.GetY() );
+    topWall.GetLowerRight().SetY( upperLeftBack.GetY() );
+    bottomWall.GetUpperLeft().SetY( lowerRightFront.GetY() );
+    bottomWall.GetLowerRight().SetY( lowerRightFront.GetY() );
 }
 
 void Box::MoveAlongZ(double z){

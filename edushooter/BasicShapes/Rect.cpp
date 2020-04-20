@@ -203,12 +203,12 @@ void Rect::SetLowerRight(Point upperLeft)
    this->lowerRight = lowerRight;
 }
 
-Point* Rect::GetUpperLeft()
+Point& Rect::GetUpperLeft()
 {
-    return &upperLeft;
+    return upperLeft;
 }
 
-Point* Rect::GetLowerRight()
+Point& Rect::GetLowerRight()
 {
-    return &lowerRight;
+    return lowerRight;
 }

@@ -20,14 +20,14 @@ class Rect
       Point lowerRight;
       Point normalVector;
 
-      bool camFollowing;
+      bool camFollowing = false;
 
       std::string texturePath;
       BMPClass textureImage;
-      bool lightingEnable;
+      bool lightingEnable = false;
       Point color;
 
-      Utils::Geometry::Orientation orientation;
+      Utils::Geometry::Orientation orientation = Utils::Geometry::Orientation::XY;
 
    public:
       Rect();
@@ -45,8 +45,8 @@ class Rect
       void SetCoords(Point, Point);
       void SetUpperLeft(Point);
       void SetLowerRight(Point);
-      Point* GetUpperLeft();
-      Point* GetLowerRight();
+      Point& GetUpperLeft();
+      Point& GetLowerRight();
 };
 
 #endif // RECT_H
