@@ -38,10 +38,10 @@ class Box
         Point color;
         Point defaultColor;
 
-        const char* texturePath;
+        std::string texturePath;
         BMPClass textureImage;
 
-        Box(Point, Point, Point, double, const char* );
+        Box(Point, Point, Point, double, const std::string& );
 
         virtual void Draw();
         void MoveBy(Point);

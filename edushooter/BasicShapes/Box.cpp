@@ -1,6 +1,6 @@
 #include "Box.h"
 
-Box::Box( Point upperLeftBack, Point lowerRightFront, Point color, double pointsNum, const char* texturePath = "" ):
+Box::Box( Point upperLeftBack, Point lowerRightFront, Point color, double pointsNum, const std::string& texturePath ):
             initialMoveDirection( 0.3 ),
             backWall( upperLeftBack, Point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), Point(0, 0, -1), color, Utils::Geometry::Orientation::XY, texturePath ),
             frontWall( Point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, Point(0, 0, 1), color, Utils::Geometry::Orientation::XY, texturePath ),
@@ -11,7 +11,7 @@ Box::Box( Point upperLeftBack, Point lowerRightFront, Point color, double points
         {
             this->defaultColor = color;
 
-                if( texturePath != "" )
+                if( !texturePath.empty() )
                 {
                     BMPLoad(texturePath, textureImage);
                 }
