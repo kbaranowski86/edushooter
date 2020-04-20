@@ -1,14 +1,14 @@
 #include "Rect.h"
 Rect::Rect() {}
 
-Rect::Rect(Point upperLeft, Point lowerRight, Point normalVector, Point color, Utils::Geometry::Orientation orientation = Utils::Geometry::XY, const char* texturePath = NULL, bool camFollowing, bool lightingEnable)
+Rect::Rect(Point upperLeft, Point lowerRight, Point normalVector, Point color, Utils::Geometry::Orientation orientation = Utils::Geometry::XY, const std::string& texturePath = NULL, bool camFollowing, bool lightingEnable)
 {
     this->color = color;
     this->lightingEnable = lightingEnable;
     this->texturePath = texturePath;
     this->camFollowing = camFollowing;
 
-    if( texturePath != NULL )
+    if(!texturePath.empty())
     {
         BMPLoad(texturePath, textureImage);
     }
@@ -43,7 +43,7 @@ void Rect::Draw()
       glLoadIdentity();
     }
 
-    if( texturePath != NULL )
+    if(!texturePath.empty())
     {
        glEnable(GL_TEXTURE_2D);
        glTexImage2D(GL_TEXTURE_2D, 0, 3, textureImage.width, textureImage.height, 0, GL_RGB,GL_UNSIGNED_BYTE, textureImage.bytes);

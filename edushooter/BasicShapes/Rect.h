@@ -22,7 +22,7 @@ class Rect
 
       bool camFollowing;
 
-      const char* texturePath;
+      std::string texturePath;
       BMPClass textureImage;
       bool lightingEnable;
       Point color;
@@ -32,7 +32,7 @@ class Rect
    public:
       Rect();
 
-      Rect(Point, Point, Point, Point, Utils::Geometry::Orientation, const char*, bool camFollowing = false, bool lightingEnable = true);
+      Rect(Point, Point, Point, Point, Utils::Geometry::Orientation, const string&, bool camFollowing = false, bool lightingEnable = true);
 
       void SetColor( Point );
       void Draw();

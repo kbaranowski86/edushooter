@@ -70,7 +70,7 @@ std::string TranslateBMPError(BMPError err)
 	}
 }
 
-BMPError BMPLoad(std::string fname,BMPClass& bmp)
+BMPError BMPLoad(const std::string& fname, BMPClass& bmp)
 {
 	if(sizeof(int)!=4) return BMPBADINT;
 	
@@ -172,7 +172,11 @@ BMPError BMPLoad(std::string fname,BMPClass& bmp)
 	return BMPNOERROR;
 }
 
-BMPError BMPLoad(std::string fname){BMPClass bmp;return BMPLoad(fname,bmp);}
+BMPError BMPLoad(const std::string& fname)
+{
+	BMPClass bmp;
+	return BMPLoad(fname, bmp);
+}
 
 #ifdef __gl_h
 BMPError BMPLoadGL(std::string fname)

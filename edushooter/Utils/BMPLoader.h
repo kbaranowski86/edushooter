@@ -68,7 +68,7 @@ public:
 #define BMPUNKNOWNFORMAT 'u'
 
 //Loads the bmp in fname, and puts the data in bmp
-BMPError BMPLoad(std::string fname,BMPClass& bmp);
+BMPError BMPLoad(const std::string& fname, BMPClass& bmp);
 
 //Translates my error codes into English
 std::string TranslateBMPError(BMPError err);
