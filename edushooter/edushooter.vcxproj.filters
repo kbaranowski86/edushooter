@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Pliki źródłowe">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Pliki zasobów">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\Utils">
+      <UniqueIdentifier>{f54831d1-9285-47b1-9822-892c5edb33e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\Utils">
+      <UniqueIdentifier>{da03222d-53f5-45b8-a40b-edeab48fe4c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\BasicShapes">
+      <UniqueIdentifier>{11a82504-b4a4-4f98-b9f9-3fc55db58df7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\BasicShapes">
+      <UniqueIdentifier>{c202c6b9-29a3-41b9-b595-94518516b8a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki nagłówkowe\SceneElements">
+      <UniqueIdentifier>{1e81e1f1-4a5a-492d-869e-0604ec524a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pliki źródłowe\SceneElements">
+      <UniqueIdentifier>{7604860b-9f0c-4509-9f17-8f2ac0d57174}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="edushooter.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\BMPLoader.cpp">
+      <Filter>Pliki źródłowe\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicShapes\Box.cpp">
+      <Filter>Pliki źródłowe\BasicShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicShapes\Point.cpp">
+      <Filter>Pliki źródłowe\BasicShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\AnswerBox.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\AnswerBoxSet.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\BoxSet.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\BoxSetSet.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\Bullet.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\InfoBar.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\Light.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\QuestionBoxSet.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\Room.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\Score.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\ThreeLevelBox.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\ThreeLevelBoxSet.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneElements\Weapon.cpp">
+      <Filter>Pliki źródłowe\SceneElements</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="BasicShapes\Rect.cpp">
+      <Filter>Pliki źródłowe\BasicShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils\Text.cpp">
+      <Filter>Pliki źródłowe\Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils\BMPLoader.h">
+      <Filter>Pliki nagłówkowe\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Text.h">
+      <Filter>Pliki nagłówkowe\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShapes\Box.h">
+      <Filter>Pliki nagłówkowe\BasicShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShapes\Point.h">
+      <Filter>Pliki nagłówkowe\BasicShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\AnswerBox.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\AnswerBoxSet.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\BoxSet.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\BoxSetSet.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\Bullet.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\InfoBar.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\Light.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\QuestionBoxSet.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\Room.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\Score.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\SimpleBox.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\ThreeLevelBox.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\ThreeLevelBoxSet.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneElements\Weapon.h">
+      <Filter>Pliki nagłówkowe\SceneElements</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils\Geometry.h">
+      <Filter>Pliki nagłówkowe\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="BasicShapes\Rect.h">
+      <Filter>Pliki nagłówkowe\BasicShapes</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Img\cegla.bmp">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Img\gres.bmp">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+    <Image Include="Img\marmur.bmp">
+      <Filter>Pliki zasobów</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
