@@ -5,7 +5,7 @@ namespace Utils
 {
 	namespace Geometry
 	{
-		enum Orientation { XY, XZ, ZY };
+		enum class Orientation { XY, XZ, ZY };
 	}
 }
 

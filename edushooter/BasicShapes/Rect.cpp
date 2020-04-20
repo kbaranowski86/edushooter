@@ -1,7 +1,7 @@
 #include "Rect.h"
 Rect::Rect() {}
 
-Rect::Rect(Point upperLeft, Point lowerRight, Point normalVector, Point color, Utils::Geometry::Orientation orientation = Utils::Geometry::XY, const std::string& texturePath = NULL, bool camFollowing, bool lightingEnable)
+Rect::Rect(Point upperLeft, Point lowerRight, Point normalVector, Point color, Utils::Geometry::Orientation orientation = Utils::Geometry::Orientation::XY, const std::string& texturePath = NULL, bool camFollowing, bool lightingEnable)
 {
     this->color = color;
     this->lightingEnable = lightingEnable;
@@ -64,37 +64,37 @@ void Rect::Draw()
 
         // 2nd point
         glTexCoord2d(1, 1);
-        if(orientation == Utils::Geometry::XY || orientation == Utils::Geometry::XZ)
+        if(orientation == Utils::Geometry::Orientation::XY || orientation == Utils::Geometry::Orientation::XZ)
         {
             glVertex3f(lowerRight.GetX(), upperLeft.GetY(), upperLeft.GetZ());
         }
-        else if(orientation == Utils::Geometry::ZY)
+        else if(orientation == Utils::Geometry::Orientation::ZY)
         {
             glVertex3f(upperLeft.GetX(), upperLeft.GetY(), lowerRight.GetZ());
         }
 
         // 3rd point
         glTexCoord2d(1, 0);
-        if(orientation == Utils::Geometry::XY)
+        if(orientation == Utils::Geometry::Orientation::XY)
         {
             glVertex3f(lowerRight.GetX(), lowerRight.GetY(), lowerRight.GetZ());
         }
-        else if(orientation == Utils::Geometry::XZ)
+        else if(orientation == Utils::Geometry::Orientation::XZ)
         {
             glVertex3f(lowerRight.GetX(), lowerRight.GetY(), lowerRight.GetZ());
         }
-        else if(orientation == Utils::Geometry::ZY)
+        else if(orientation == Utils::Geometry::Orientation::ZY)
         {
             glVertex3f(lowerRight.GetX(), lowerRight.GetY(), lowerRight.GetZ());
         }
 
         // 4th point
         glTexCoord2d(0, 0);
-        if(orientation == Utils::Geometry::XY || orientation == Utils::Geometry::XZ)
+        if(orientation == Utils::Geometry::Orientation::XY || orientation == Utils::Geometry::Orientation::XZ)
         {
             glVertex3f(upperLeft.GetX(), lowerRight.GetY(), lowerRight.GetZ());
         }
-        else if(orientation == Utils::Geometry::ZY)
+        else if(orientation == Utils::Geometry::Orientation::ZY)
         {
             glVertex3f(upperLeft.GetX(), lowerRight.GetY(), upperLeft.GetZ());
         }
@@ -110,15 +110,15 @@ float Rect::GetWidth()
 {
     switch( orientation )
     {
-        case Utils::Geometry::XY:
+        case Utils::Geometry::Orientation::XY:
             return fabs( this->lowerRight.GetX() - this->upperLeft.GetX() );
             break;
 
-        case Utils::Geometry::XZ:
+        case Utils::Geometry::Orientation::XZ:
             return fabs( this->lowerRight.GetX() - this->upperLeft.GetX() );
             break;
 
-        case Utils::Geometry::ZY:
+        case Utils::Geometry::Orientation::ZY:
             return fabs( this->lowerRight.GetZ() - this->upperLeft.GetZ() );
     }
 }
@@ -127,15 +127,15 @@ float Rect::GetHeight()
 {
     switch( orientation )
     {
-        case Utils::Geometry::XY:
+        case Utils::Geometry::Orientation::XY:
             return fabs( this->upperLeft.GetY() - this->lowerRight.GetY() );
             break;
 
-        case Utils::Geometry::XZ:
+        case Utils::Geometry::Orientation::XZ:
             return fabs( this->upperLeft.GetZ() - this->lowerRight.GetZ() );
             break;
 
-        case Utils::Geometry::ZY:
+        case Utils::Geometry::Orientation::ZY:
             return fabs( this->upperLeft.GetY() - this->lowerRight.GetY() );
     }
 }
@@ -145,7 +145,7 @@ void Rect::MoveTo( Point p, bool handle = 0 )
 {
     switch( orientation )
     {
-        case Utils::Geometry::XY:
+        case Utils::Geometry::Orientation::XY:
             if( handle == 0 )
             {
                 SetCoords( p, Point( p.GetX() + GetWidth(), p.GetY() - GetHeight(), p.GetZ() ) );
@@ -156,7 +156,7 @@ void Rect::MoveTo( Point p, bool handle = 0 )
             }
 
             break;
-        case Utils::Geometry::XZ:
+        case Utils::Geometry::Orientation::XZ:
             if( handle == 0 )
             {
                 SetCoords( p, Point( p.GetX() + GetWidth(), p.GetY(), p.GetZ() + GetHeight() ) );
@@ -167,7 +167,7 @@ void Rect::MoveTo( Point p, bool handle = 0 )
             }
             break;
 
-        case Utils::Geometry::ZY:
+        case Utils::Geometry::Orientation::ZY:
             if( handle == 0 )
             {
                 SetCoords( p, Point( p.GetX(), p.GetY() - GetHeight(), p.GetZ() + GetWidth() ) );
