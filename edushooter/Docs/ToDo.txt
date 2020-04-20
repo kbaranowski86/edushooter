@@ -1,3 +1,0 @@
-- fix info bar bg problem - text shoudn't be rendered on it
-- improve memory management
-- make mirror on the back wall of room
