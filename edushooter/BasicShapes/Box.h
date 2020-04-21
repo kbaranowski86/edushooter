@@ -41,20 +41,20 @@ class Box
         std::string texturePath;
         BMPClass textureImage;
 
-        Box(Point, Point, Point, double, const std::string& );
+        Box(const Point&, const Point&, const Point&, const double&, const std::string& );
 
         virtual void Draw();
-        void MoveBy(Point);
-        void MoveAlongX(double);
-        virtual void MoveAlongY(double);
-        void MoveAlongZ(double);
-        void SetColor(double, double, double);
+        void MoveBy(const Point&);
+        void MoveAlongX(const double&);
+        virtual void MoveAlongY(const double&);
+        void MoveAlongZ(const double&);
+        void SetColor(const double&, const double&, const double&);
 
         // move Box to desired point handling upperLeftBack (0) or lowerRightFront (1) point
-        void MoveTo(Point, bool );
-        void SetColor(Point);
-        bool GetHit();
-        virtual void SetHit( bool );
-        virtual bool CheckIfHit(Bullet*);
+        void MoveTo(const Point&, const bool&);
+        void SetColor(const Point&);
+        bool GetHit() const;
+        virtual void SetHit(const bool&);
+        virtual bool CheckIfHit(Bullet&);
 };
 #endif // BOX_H

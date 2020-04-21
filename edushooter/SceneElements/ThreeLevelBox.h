@@ -17,9 +17,9 @@ class ThreeLevelBox : public Box
 
    public:
 
-      ThreeLevelBox(Point, Point, const char*);
+      ThreeLevelBox(const Point&, const Point&, const std::string&);
       void Draw();
-      bool CheckIfHit(Bullet*);
-      void SetHit( bool );
-      void MoveAlongY(double);
+      bool CheckIfHit(Bullet&);
+      void SetHit(const bool&);
+      void MoveAlongY(const double&);
 };

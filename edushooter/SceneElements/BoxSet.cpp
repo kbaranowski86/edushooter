@@ -67,7 +67,7 @@ void BoxSet::MoveShuffled(double moveDownSpeed, double moveUpSpeed) {
     shuffledBox->MoveAlongY(shuffledBox->moveDirection);
 }
 
-void BoxSet::CheckBoxesForHit(Bullet* hittingBullet) {
+void BoxSet::CheckBoxesForHit(Bullet& hittingBullet) {
     if( shuffledBox->CheckIfHit( hittingBullet ) )
     {
         Score::GetInstance().IncreasePointsOf( shuffledBox->pointsNum );

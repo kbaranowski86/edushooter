@@ -175,7 +175,7 @@ void AnswerBoxSet::ShuffleAnswerIndexes()
     }
 }
 
-void AnswerBoxSet::CheckBoxesForHit(Bullet* hittingBullet)
+void AnswerBoxSet::CheckBoxesForHit(Bullet& hittingBullet)
 {
     int i, j;
 

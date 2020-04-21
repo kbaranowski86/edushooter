@@ -1,6 +1,6 @@
 #include "Box.h"
 
-Box::Box( Point upperLeftBack, Point lowerRightFront, Point color, double pointsNum, const std::string& texturePath ):
+Box::Box(const Point& upperLeftBack, const Point& lowerRightFront, const Point& color, const double& pointsNum, const std::string& texturePath ):
             initialMoveDirection( 0.3 ),
             backWall( upperLeftBack, Point(lowerRightFront.GetX(), lowerRightFront.GetY(), upperLeftBack.GetZ()), Point(0, 0, -1), color, Utils::Geometry::Orientation::XY, texturePath ),
             frontWall( Point(upperLeftBack.GetX(), upperLeftBack.GetY(), lowerRightFront.GetZ()), lowerRightFront, Point(0, 0, 1), color, Utils::Geometry::Orientation::XY, texturePath ),
@@ -75,16 +75,16 @@ void Box::Draw() {
     bottomWall.Draw();
 }
 
-void Box::MoveBy(Point p) {
+void Box::MoveBy(const Point& p) {
     this->upperLeftBack = this->upperLeftBack + p;
     this->lowerRightFront = this->lowerRightFront + p;
 }
 
-void Box::MoveAlongX(double x) {
+void Box::MoveAlongX(const double& x) {
     this->MoveBy(Point(x, 0, 0));
 }
 
-void Box::MoveAlongY(double y){
+void Box::MoveAlongY(const double& y){
     this->MoveBy(Point(0, y, 0));
     backWall.GetUpperLeft().SetY( upperLeftBack.GetY() );
     backWall.GetLowerRight().SetY( lowerRightFront.GetY() );
@@ -100,11 +100,11 @@ void Box::MoveAlongY(double y){
     bottomWall.GetLowerRight().SetY( lowerRightFront.GetY() );
 }
 
-void Box::MoveAlongZ(double z){
+void Box::MoveAlongZ(const double& z){
     this->MoveBy(Point(0, 0, z));
 }
 
-void Box::SetColor(double r, double g, double b)
+void Box::SetColor(const double& r, const double& g, const double& b)
 {
     this->r = r;
     this->g = g;
@@ -112,7 +112,7 @@ void Box::SetColor(double r, double g, double b)
 }
 
 // move Box to desired point handling upperLeftBack (0) or lowerRightFront (1) point
-void Box::MoveTo( Point p, bool handler )
+void Box::MoveTo(const Point& p, const bool& handler )
 {
     if( handler == 0 )
     {
@@ -131,29 +131,29 @@ void Box::MoveTo( Point p, bool handler )
     bottomWall.MoveTo( Point( p.GetX(), p.GetY() - height, p.GetZ() ), handler );
 }
 
-void Box::SetColor(Point vector)
+void Box::SetColor(const Point& vector)
 {
     r = vector.GetX();
     g = vector.GetY();
     b = vector.GetZ();
 }
 
-bool Box::GetHit()
+bool Box::GetHit() const
 {
     return hit;
 }
 
-void Box::SetHit( bool hit )
+void Box::SetHit(const bool& hit )
 {
     this->hit = hit;
 }
 
-bool Box::CheckIfHit(Bullet* hittingBullet)
+bool Box::CheckIfHit(Bullet& hittingBullet)
 {
-    if( ( hittingBullet->GetPosition().GetX() >= upperLeftBack.GetX() && hittingBullet->GetPosition().GetX() <= lowerRightFront.GetX() )
-    && ( hittingBullet->GetPosition().GetY() <= upperLeftBack.GetY() && hittingBullet->GetPosition().GetY() >= lowerRightFront.GetY() )
-    && ( hittingBullet->GetPosition().GetZ() >= upperLeftBack.GetZ() && hittingBullet->GetPosition().GetZ() <= lowerRightFront.GetZ() )
-    && hittingBullet->GetMomentum() != Point(0.0, 0.0, 0.0)
+    if( ( hittingBullet.GetPosition().GetX() >= upperLeftBack.GetX() && hittingBullet.GetPosition().GetX() <= lowerRightFront.GetX() )
+    && ( hittingBullet.GetPosition().GetY() <= upperLeftBack.GetY() && hittingBullet.GetPosition().GetY() >= lowerRightFront.GetY() )
+    && ( hittingBullet.GetPosition().GetZ() >= upperLeftBack.GetZ() && hittingBullet.GetPosition().GetZ() <= lowerRightFront.GetZ() )
+    && hittingBullet.GetMomentum() != Point(0.0, 0.0, 0.0)
     )
     {
         if( GetHit() == false )
@@ -163,7 +163,7 @@ bool Box::CheckIfHit(Bullet* hittingBullet)
 
         moveDirection = -0.1;
 
-        hittingBullet->GiveMomentum( Point(0, 0, 0) );
+        hittingBullet.GiveMomentum( Point(0, 0, 0) );
 
         InfoBar::GetInstance().SetHitIndicating();
 

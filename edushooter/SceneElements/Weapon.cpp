@@ -59,7 +59,7 @@ void Weapon::DrawBullets()
     {
         for( j = 0; j < 3; j++ )
         {
-            boxSetSet->boxSets[j]->CheckBoxesForHit(&bullets[i]);
+            boxSetSet->boxSets[j]->CheckBoxesForHit(bullets[i]);
         }
 
         room->CheckIfHit(&bullets[i]);

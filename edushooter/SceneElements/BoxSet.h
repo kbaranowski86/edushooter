@@ -29,6 +29,6 @@ class BoxSet
     // Move shuffled box up and down
     virtual void MoveShuffled(double, double);
 
-    virtual void CheckBoxesForHit(Bullet*);
+    virtual void CheckBoxesForHit(Bullet&);
 };
 #endif // BOXSET_H

@@ -19,6 +19,6 @@ class AnswerBoxSet : public BoxSet
         void MoveShuffled(double, double);
         void Shuffle();
         void ShuffleAnswerIndexes();
-        void CheckBoxesForHit(Bullet*);
+        void CheckBoxesForHit(Bullet&);
 };
 #endif // ANSWERBOXSET_H

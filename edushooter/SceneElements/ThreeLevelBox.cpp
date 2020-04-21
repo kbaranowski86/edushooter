@@ -1,6 +1,6 @@
-#include "threelevelbox.h"
+#include "ThreeLevelBox.h"
 
-ThreeLevelBox::ThreeLevelBox(Point upperLeftBack, Point lowerRightFront, const char* texturePath):
+ThreeLevelBox::ThreeLevelBox(const Point& upperLeftBack, const Point& lowerRightFront, const std::string& texturePath):
     Box( upperLeftBack, lowerRightFront, Point( 0, 0, 0 ), 0.0f, texturePath ),
     levelHeight( std::fabs( upperLeftBack.GetY() - lowerRightFront.GetY() ) / 3),
     firstPiece( Point( upperLeftBack.GetX(), upperLeftBack.GetY(), upperLeftBack.GetZ() ), Point( lowerRightFront.GetX(), upperLeftBack.GetY() - levelHeight, lowerRightFront.GetZ() ), Point( 1, 0, 0 ), 2.0f, texturePath ),
@@ -16,7 +16,7 @@ void ThreeLevelBox::Draw()
     thirdPiece.Draw();
 }
 
-bool ThreeLevelBox::CheckIfHit(Bullet* hittingBullet)
+bool ThreeLevelBox::CheckIfHit(Bullet& hittingBullet)
 {
     if( firstPiece.CheckIfHit(hittingBullet) )
     {
@@ -44,7 +44,7 @@ bool ThreeLevelBox::CheckIfHit(Bullet* hittingBullet)
     return false;
 }
 
-void ThreeLevelBox::SetHit( bool hit )
+void ThreeLevelBox::SetHit(const bool& hit )
 {
     firstPiece.SetHit( hit );
     secondPiece.SetHit( hit );
@@ -53,7 +53,7 @@ void ThreeLevelBox::SetHit( bool hit )
     Box::SetHit( hit );
 }
 
-void ThreeLevelBox::MoveAlongY(double y)
+void ThreeLevelBox::MoveAlongY(const double& y)
 {
     firstPiece.MoveAlongY(y);
     secondPiece.MoveAlongY(y);
