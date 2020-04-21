@@ -32,19 +32,19 @@ class Rect
    public:
       Rect();
 
-      Rect(Point, Point, Point, Point, Utils::Geometry::Orientation, const string&, bool camFollowing = false, bool lightingEnable = true);
+      Rect(const Point&, const Point&, const Point&, const Point&, const Utils::Geometry::Orientation&, const string&, const bool& camFollowing = false, const bool& lightingEnable = true);
 
-      void SetColor( Point );
+      void SetColor(const Point&);
       void Draw();
       float GetWidth();
       float GetHeight();
 
       // move point p, handling upperLeft point (0) (default) or lowerRight point (1)
-      void MoveTo( Point, bool );
-      void MoveBy(Point);
-      void SetCoords(Point, Point);
-      void SetUpperLeft(Point);
-      void SetLowerRight(Point);
+      void MoveTo(const Point&, const bool& );
+      void MoveBy(const Point&);
+      void SetCoords(const Point&, const Point&);
+      void SetUpperLeft(const Point&);
+      void SetLowerRight(const Point&);
       Point& GetUpperLeft();
       Point& GetLowerRight();
 };

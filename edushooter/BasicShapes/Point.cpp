@@ -31,15 +31,15 @@ void Point::SetCoords(double x, double y, double z)
     this->z = z;
 }
 
-double Point::GetX(){
+double Point::GetX() const{
      return x;
 }
 
-double Point::GetY(){
+double Point::GetY() const{
      return y;
 }
 
-double Point::GetZ(){
+double Point::GetZ() const{
      return z;
 }
 

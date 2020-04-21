@@ -22,9 +22,9 @@ class Point{  //definicja punktu w przestrzeni
        void SetY(double);
        void SetZ(double);
        void SetCoords(double, double, double);
-       double GetX();
-       double GetY();
-       double GetZ();
+       double GetX() const;
+       double GetY() const;
+       double GetZ() const;
        void normalize();
        Point operator+(const Point&);
        Point operator-(const Point&);

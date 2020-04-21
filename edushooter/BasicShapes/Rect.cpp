@@ -1,7 +1,7 @@
 #include "Rect.h"
 Rect::Rect() {}
 
-Rect::Rect(Point upperLeft, Point lowerRight, Point normalVector, Point color, Utils::Geometry::Orientation orientation = Utils::Geometry::Orientation::XY, const std::string& texturePath = NULL, bool camFollowing, bool lightingEnable)
+Rect::Rect(const Point& upperLeft, const Point& lowerRight, const Point& normalVector, const Point& color, const Utils::Geometry::Orientation& orientation = Utils::Geometry::Orientation::XY, const std::string& texturePath = NULL, const bool& camFollowing, const bool& lightingEnable)
 {
     this->color = color;
     this->lightingEnable = lightingEnable;
@@ -19,7 +19,7 @@ Rect::Rect(Point upperLeft, Point lowerRight, Point normalVector, Point color, U
     this->orientation = orientation;
 }
 
-void Rect::SetColor( Point color )
+void Rect::SetColor(const Point& color )
 {
     this->color = color;
 }
@@ -141,7 +141,7 @@ float Rect::GetHeight()
 }
 
 // move point p, handling upperLeft point (0) (default) or lowerRight point (1)
-void Rect::MoveTo( Point p, bool handle = 0 )
+void Rect::MoveTo(const Point& p, const bool& handle = 0 )
 {
     switch( orientation )
     {
@@ -179,25 +179,25 @@ void Rect::MoveTo( Point p, bool handle = 0 )
     }
 }
 
-void Rect::MoveBy(Point p)
+void Rect::MoveBy(const Point& p)
 {
    this->upperLeft = this->upperLeft + p;
    this->lowerRight = this->lowerRight + p;
 }
 
-void Rect::SetCoords(Point upperLeft, Point lowerRight)
+void Rect::SetCoords(const Point& upperLeft, const Point& lowerRight)
 {
    this->upperLeft = upperLeft;
    this->lowerRight = lowerRight;
 }
 
-void Rect::SetUpperLeft(Point upperLeft)
+void Rect::SetUpperLeft(const Point& upperLeft)
 {
    this->upperLeft = upperLeft;
    this->lowerRight = lowerRight;
 }
 
-void Rect::SetLowerRight(Point upperLeft)
+void Rect::SetLowerRight(const Point& upperLeft)
 {
    this->upperLeft = upperLeft;
    this->lowerRight = lowerRight;
