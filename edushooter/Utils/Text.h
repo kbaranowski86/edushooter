@@ -14,8 +14,8 @@ namespace Utils
     class Text
     {
         public:
-            static void PutTextCamFollowing(const Point&, const Point&, void*, const char*);
-            static void PutTextStable(const Point&, const Point&, void*, char*);
+            static void PutTextCamFollowing(const Point&, const Point&, void*, const std::string&);
+            static void PutTextStable(const Point&, const Point&, void*, const std::string&);
     };
 }
 

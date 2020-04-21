@@ -1,6 +1,6 @@
 #include "Text.h"
 
-void Utils::Text::PutTextCamFollowing(const Point& position, const Point& color, void* font, const char* str)
+void Utils::Text::PutTextCamFollowing(const Point& position, const Point& color, void* font, const std::string& str)
 {
     glColor3f(color.GetX(), color.GetY(), color.GetZ());
 
@@ -12,15 +12,14 @@ void Utils::Text::PutTextCamFollowing(const Point& position, const Point& color,
         glNormal3f(0,0,-1);
 
          // writing text char by char
-        const char* c;
-        for (c = str; *c != '\0'; c++)
+        for (char const& c : str)
         {
-            glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *c);
+            glutBitmapCharacter(font, c);
         }
     glPopMatrix();
 }
 
-void Utils::Text::PutTextStable(const Point& position, const Point& color, void* font, char* str)
+void Utils::Text::PutTextStable(const Point& position, const Point& color, void* font, const std::string& str)
 {
     glColor3f(color.GetX(), color.GetY(), color.GetZ());
 
@@ -28,9 +27,8 @@ void Utils::Text::PutTextStable(const Point& position, const Point& color, void*
     glNormal3f(0,0,-1);
 
     // writing text char by char
-    char* c;
-    for (c = str; *c != '\0'; c++)
+    for (char const& c : str)
     {
-        glutBitmapCharacter(GLUT_BITMAP_TIMES_ROMAN_24, *c);
+        glutBitmapCharacter(font, c);
     }
 }
