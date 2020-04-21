@@ -1,6 +1,6 @@
 #include "Text.h"
 
-void Utils::Text::PutTextCamFollowing(Point position, Point color, void* font, const char* str)
+void Utils::Text::PutTextCamFollowing(const Point& position, const Point& color, void* font, const char* str)
 {
     glColor3f(color.GetX(), color.GetY(), color.GetZ());
 
@@ -20,7 +20,7 @@ void Utils::Text::PutTextCamFollowing(Point position, Point color, void* font, c
     glPopMatrix();
 }
 
-void Utils::Text::PutTextStable(Point position, Point color, void* font, char* str)
+void Utils::Text::PutTextStable(const Point& position, const Point& color, void* font, char* str)
 {
     glColor3f(color.GetX(), color.GetY(), color.GetZ());
 
