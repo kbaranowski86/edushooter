@@ -1,15 +1,15 @@
 #include "AnswerBox.h"
 
-AnswerBox::AnswerBox(Point upperLeftBack, Point lowerRightFront, Point color, double PointsNum, const char* texturePath = ""):
+AnswerBox::AnswerBox(const Point& upperLeftBack, const Point& lowerRightFront, const Point& color, const double& PointsNum, const std::string& texturePath = ""):
     Box( upperLeftBack, lowerRightFront, color, pointsNum, texturePath ) {
         answerIndex = 0;
     }
 
-void AnswerBox::SetAnswerIndex(int answerIndex) {
+void AnswerBox::SetAnswerIndex(const int& answerIndex) {
     this->answerIndex = answerIndex;
 }
 
-int AnswerBox::GetAnswerIndex() {
+int AnswerBox::GetAnswerIndex() const {
     return this->answerIndex;
 }
 

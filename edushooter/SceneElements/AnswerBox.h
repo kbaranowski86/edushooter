@@ -10,9 +10,9 @@ class AnswerBox : public Box
         std::string texturePath;
 
     public:
-        AnswerBox( Point, Point, Point, double, const char* );
-        void SetAnswerIndex( int );
-        int GetAnswerIndex();
+        AnswerBox(const Point&, const Point&, const Point&, const double&, const std::string& );
+        void SetAnswerIndex(const int&);
+        int GetAnswerIndex() const;
         void Draw();
 };
 #endif // ANSWERBOX_H
