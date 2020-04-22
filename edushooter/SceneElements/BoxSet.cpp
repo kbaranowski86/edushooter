@@ -12,7 +12,7 @@ BoxSet::BoxSet( double spacing, double verticalPosition, double depth, double mo
     {
          for( j = 0.0; j < 8 ; j++ )
          {
-            boxes[ i ][ j ] = new Box(
+            boxes[ i ][ j ] = make_shared<Box>(
                         Point( 4.7 - j - spacing * j - 1.0, verticalPosition, i * 3 ),
                         Point( 4.7 - j - spacing * j, verticalPosition - 1.3, i * 3 + depth),
                         Point(0.7, 0.7, 0.7),

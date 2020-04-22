@@ -1,18 +1,19 @@
 #include <iostream>
 #include "AnswerBox.h"
 #include "BoxSet.h"
+#include <array>
 #ifndef ANSWERBOXSET_H
 #define ANSWERBOXSET_H
 
 class AnswerBoxSet : public BoxSet
 {
     public:
-        AnswerBox* shuffledBoxes[3];
+        std::array<shared_ptr<AnswerBox>, 3> shuffledBoxes;
         char correctAnswerIndex;
         bool correctAnswerHit;
         int correctAnswerPointsNum;
 
-        AnswerBoxSet( double, double, double, double );
+        AnswerBoxSet(const double&, const double&, const double&, const double&);
 
         void AnimateShuffledBoxes();
         // Move shuffled box up and down

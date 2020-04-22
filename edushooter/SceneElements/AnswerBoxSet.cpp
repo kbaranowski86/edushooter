@@ -1,6 +1,6 @@
 #include "answerboxset.h"
 
-AnswerBoxSet::AnswerBoxSet( double spacing, double verticalPosition, double depth, double moveSpeedMultiplier ):
+AnswerBoxSet::AnswerBoxSet(const double& spacing, const double& verticalPosition, const double& depth, const double& moveSpeedMultiplier ):
 BoxSet( spacing, verticalPosition, depth, moveSpeedMultiplier )
 {
     correctAnswerPointsNum = 8;
@@ -13,7 +13,7 @@ BoxSet( spacing, verticalPosition, depth, moveSpeedMultiplier )
     {
          for( j = 0.0; j < 8 ; j++ )
          {
-            boxes[ i ][ j ] = new AnswerBox(
+            boxes[ i ][ j ] = std::make_shared<AnswerBox>(
                         Point( 4.7 - j - spacing * j - 1.0, verticalPosition, i * 3 ),
                         Point( 4.7 - j - spacing * j, verticalPosition - 1.3, i * 3 + depth),
                         Point( 0.7, 0.7, 0.7 ),
@@ -119,7 +119,7 @@ void AnswerBoxSet::Shuffle()
 
         if( columnFree == true )
         {
-            this->shuffledBoxes[ i ] = (AnswerBox*)boxes[ s[0] ][ s[1] ];
+            this->shuffledBoxes[ i ] = dynamic_pointer_cast<AnswerBox>(boxes[ s[0] ][ s[1] ]);
             tmpCol[ i ] = s[1];
             i++;
         }
@@ -185,12 +185,12 @@ void AnswerBoxSet::CheckBoxesForHit(Bullet& hittingBullet)
         if( shuffledBoxes[i]->CheckIfHit( hittingBullet ) )
         {
             // check if correct box hit
-            if( ( (AnswerBox*)shuffledBoxes[i])->GetAnswerIndex() == correctAnswerIndex )
+            if( shuffledBoxes[i]->GetAnswerIndex() == correctAnswerIndex )
             {
                 Score::GetInstance().IncreasePointsOf( correctAnswerPointsNum );
                 correctAnswerHit = true;
             }
-            else if( ( (AnswerBox*)shuffledBoxes[i])->GetAnswerIndex() != correctAnswerIndex && correctAnswerHit == false )
+            else if( shuffledBoxes[i]->GetAnswerIndex() != correctAnswerIndex && correctAnswerHit == false )
             {
                 Score::GetInstance().IncreasePointsOf( shuffledBoxes[i]->pointsNum );
                 for( j = 0; j < 3; j++ )
