@@ -18,7 +18,7 @@ class BoxSet
         double verticalPosition;
 
         // Locating boxes on the scene
-        BoxSet( double, double, double, double );
+        BoxSet(const double&, const double&, const double&, const double&);
 
         virtual void AnimateShuffledBoxes();
 
@@ -27,7 +27,7 @@ class BoxSet
         bool IsCycleEnd();
 
         // Move shuffled box up and down
-        virtual void MoveShuffled(double, double);
+        virtual void MoveShuffled(const double&, const double&);
 
         virtual void CheckBoxesForHit(Bullet&);
 };

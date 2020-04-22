@@ -5,9 +5,9 @@ BoxSetSet::BoxSetSet() {
 
     currentSetNum = 0;
 
-    boxSets[0] = new ThreeLevelBoxSet( 0.2, -1.0, 0.8, 0.1 );
-    boxSets[1] = new BoxSet( 0.2, -1.0, 0.8, 0.1 );
-    boxSets[2] = new AnswerBoxSet( 0.2, -1.0, 0.8, 0.1 );
+    boxSets[0] = make_unique<ThreeLevelBoxSet>( 0.2, -1.0, 0.8, 0.1 );
+    boxSets[1] = make_unique<BoxSet>( 0.2, -1.0, 0.8, 0.1 );
+    boxSets[2] = make_unique<AnswerBoxSet>( 0.2, -1.0, 0.8, 0.1 );
 }
 
 void BoxSetSet::Animate() {

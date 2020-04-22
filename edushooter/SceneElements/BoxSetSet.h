@@ -8,7 +8,7 @@ class BoxSetSet
 {
 
     public:
-        BoxSet* boxSets[3];
+        std::array<unique_ptr<BoxSet>, 3> boxSets;
 
         int currentSetNum;
         bool currentSetHit;

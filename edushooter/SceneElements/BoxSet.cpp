@@ -1,6 +1,6 @@
 #include "boxset.h"
 
-BoxSet::BoxSet( double spacing, double verticalPosition, double depth, double moveSpeedMultiplier ) {
+BoxSet::BoxSet(const double& spacing, const double& verticalPosition, const double& depth, const double& moveSpeedMultiplier ) {
     this->verticalPosition = verticalPosition;
 
     this->moveSpeedMultiplier = moveSpeedMultiplier;
@@ -47,7 +47,7 @@ bool BoxSet::IsCycleEnd() {
     return this->cycleEnd;
 }
 
-void BoxSet::MoveShuffled(double moveDownSpeed, double moveUpSpeed) {
+void BoxSet::MoveShuffled(const double& moveDownSpeed, const double& moveUpSpeed) {
     if(shuffledBox->upperLeftBack.GetY() > 0)
     {
        shuffledBox->moveDirection = - moveDownSpeed;
