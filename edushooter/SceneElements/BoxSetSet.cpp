@@ -32,15 +32,8 @@ void BoxSetSet::Animate() {
         //reset cycle state
         boxSets[currentSetNum]->cycleEnd = false;
     }
-    else
+    else if( currentSetNum == 1 && boxSets[currentSetNum]->shuffledBox->GetHit() )
     {
-        if( currentSetNum == 1 )
-        {
-            // check if current boxset hit
-            if( boxSets[currentSetNum]->shuffledBox->GetHit() )
-            {
-                currentSetHit = true;
-            }
-        }
+        currentSetHit = true;
     }
 }
