@@ -1,7 +1,9 @@
 #include "Scene.h"
 
-void Scene::InitializeScene() {
+void Scene::InitializeScene(int argc, char** argv) {
     Score::GetInstance().TimeStart();
+
+    glutInit(&argc, argv);
 
     /*funkcje biblioteki glut s¹ odpowiedzialne za przenosnosc kodu miedzy OSami (cross-platform)*/
     // Inicjujemy OpenGL w trybie RGB i z podwójnym buforowaniem:

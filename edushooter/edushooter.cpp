@@ -1,9 +1,9 @@
 ﻿#include <windows.h>
 #include "Scene.h"
 
-int main(void)
+int main(int argc, char** argv)
 {
-    Scene::InitializeScene();
+    Scene::InitializeScene(argc, argv);
 }
 
 double Scene::tX = 0;

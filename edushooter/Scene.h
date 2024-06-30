@@ -36,7 +36,7 @@ class Scene
         static double tmpX, tmpY;
 
         // Initializing all neccessary objects
-        static void InitializeScene();
+        static void InitializeScene(int argc, char** argv);
 
    private:
 
