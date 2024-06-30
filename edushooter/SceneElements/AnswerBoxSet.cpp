@@ -37,7 +37,7 @@ void AnswerBoxSet::AnimateShuffledBoxes()
 
     InfoBar::GetInstance().DrawBonusInfo( correctAnswerIndex );
 
-    MoveShuffled(0.08 * moveSpeedMultiplier, 1 * moveSpeedMultiplier);
+    MoveShuffled(0.02 * moveSpeedMultiplier, moveSpeedMultiplier);
 }
 
 // Move shuffled box up and down

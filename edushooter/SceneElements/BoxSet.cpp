@@ -25,7 +25,7 @@ BoxSet::BoxSet(const double& spacing, const double& verticalPosition, const doub
 
 void BoxSet::AnimateShuffledBoxes() {
     shuffledBox->Draw();
-    MoveShuffled(0.08 * moveSpeedMultiplier, 1 * moveSpeedMultiplier);
+    MoveShuffled(0.02 * moveSpeedMultiplier, moveSpeedMultiplier);
 }
 
 void BoxSet::Shuffle() {
